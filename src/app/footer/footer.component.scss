@@ -1,0 +1,176 @@
+li,
+button {
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.Support {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: .9rem;
+}
+
+.Support p:nth-child(3) {
+    text-wrap: nowrap;
+}
+
+.Account {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.Quick-link {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: black;
+    justify-content: space-around;
+    color: white;
+    list-style: none;
+    padding-block: 3rem;
+    padding-inline: 4rem;
+    gap: 1rem;
+}
+
+.footer li {
+    font-size: .9rem;
+    text-wrap: nowrap;
+}
+
+.footer li:hover {
+    text-decoration: underline;
+
+}
+
+.footer h3 {
+    font-size: 1.1rem;
+    font-weight: bold
+}
+
+.Get {
+    font-size: .5rem;
+}
+
+.App {
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.saving {
+    font-size: .7rem;
+}
+
+.download {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-wrap: nowrap;
+}
+
+.facebook {
+    fill: white;
+}
+
+.facebook:hover {
+    fill: rgb(219, 68, 68);
+}
+
+.twitter {
+    fill: white;
+    stroke: black;
+}
+
+.twitter:hover {
+    fill: rgb(219, 68, 68);
+    stroke: white;
+}
+
+.insta {
+    fill: white;
+    stroke: black;
+}
+
+.insta:hover {
+    fill: rgb(219, 68, 68);
+    stroke: white;
+
+}
+
+.linkedin {
+    fill: white;
+}
+
+.linkedin:hover {
+    fill: rgb(219, 68, 68);
+}
+
+.Copyright {
+    font-size: .8rem;
+    opacity: 0.2;
+    padding-bottom: 2rem;
+}
+
+@media(max-width:978px) {
+    .footer {
+        padding-inline: 2rem;
+        grid-template-columns: repeat(4, minmax(10rem, 1fr));
+    }
+}
+
+@media(max-width:830px) {
+    .footer {
+        grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    }
+}
+
+@media(max-width:600px) {
+    .footer {
+        grid-template-columns: repeat((1, minmax(10rem, 1fr)));
+    }
+
+    .logo {
+        align-self: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .logo img {
+        margin-inline: auto;
+    }
+
+    .Support {
+        align-self: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .Account {
+        align-self: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .Quick-link {
+        align-self: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .download {
+        align-self: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+}

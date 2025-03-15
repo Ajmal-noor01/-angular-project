@@ -1,0 +1,220 @@
+<!-- <p>product-details works!</p> -->
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="homepage.css"> -->
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- <app-product></app-product> -->
+<main>
+
+
+    <section class="detail-section">
+        <div class="flex gap-[.5rem] breadcrums">
+            <p>Home</p>
+            <p>/</p>
+            <p>Flash Sales</p>
+            <p>/</p>
+            <p>Havic HV G-92 Gamepad</p>
+        </div>
+        <div class="product-details-img">
+            <!-- {{productLists | json}} -->
+            @for(productList of productLists;track $index;){
+
+            <div>
+
+                <!-- <img src="home  page/havic gamepad.png" alt="pic"> -->
+                <img class="productDetailImg" src={{productList[productList.length-1].image}} alt="pic">
+            </div>
+            <div class="product-details-section">
+                <div class="product-name-description">
+                    <div class="product-name">
+                        <!-- <h3>Havic HV G-92 Gamepad</h3> -->
+                        <h3 class="product-Title">{{productList[productList.length-1]?.name||'Havic HV G-92 Gamepad'}}
+                        </h3>
+                        <div class="flex gap-[.8rem]">
+                            <div class="star-review">
+
+                                <img src="Four Star.svg" alt="">
+                                <p>(150 Reviews)</p>
+                            </div>
+
+                            <p class="instock">In Stock</p>
+                        </div>
+                        <!-- <p>$192.00</p> -->
+                        <p class="detail-price">{{productList[productList.length-1]?.price||'$192.00'|currency}}</p>
+                    </div>
+                    <p>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free
+                        install &
+                        mess free removal Pressure sensitive.</p>
+                    <hr>
+                </div>
+
+
+
+                <div class="colors">
+                    <p>Colours:</p>
+                    <div class="flex">
+                        <div class="select-color-parent">
+
+
+
+                            <div class="select-color-detail">
+                            </div>
+                        </div>
+                        <div class="select-color-parent">
+
+                            <div class="select-color-red"></div>
+                        </div>
+
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="size">
+                    <p>Size:</p>
+                    <div class="size-variation">
+                        <button>XS</button>
+                        <button>S</button>
+                        <button>M</button>
+                        <button>L</button>
+                        <button>XL</button>
+                    </div>
+                </div>
+                <div class="cart-quantity">
+                    <div class="quantity">
+
+                        <button (click)="decreaseNumber()">-</button>
+                        <p>{{productList.quantity}}</p>
+                        <button class="increment" (click)="increaseNumber()">+</button>
+                    </div>
+                    <button class="product-add-cart" (click)="gotoCart()">Add To Cart</button>
+                    <button class="wishlist-button"><svg class="heart" width="22" height="20" viewBox="0 0 22 20"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </div>
+                <div class="delivery">
+                    <div class="free-delivery">
+                        <img src="product detail free delivery.svg" alt="">
+                        <div>
+                            <p>Free Delivery</p>
+                            <p>Enter your postal code for Delivery Availability</p>
+                        </div>
+                    </div>
+                    <div class="return-deliverry">
+                        <img src="Icon-return.svg" alt="">
+                        <div>
+                            <p>Return Delivery</p>
+                            <p>Free 30 Days Delivery Returns. Details</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            }
+        </div>
+    </section>
+    <section class="detailProduct">
+        <div class="flex flex-col gap-[3rem]">
+
+            <div class="flex gap-[1rem]">
+                <div class="flag"></div>
+                <h4 class="related-item">Related Item</h4>
+            </div>
+            <div class="product-image-grid-2">
+                @for (productDetail of productDetails ; track $index;) {
+
+
+                <div class="product-image-details">
+
+
+                    <div class="product-image">
+                        <div class="flex justify-between">
+                            <!-- <p>-40&percnt;</p>
+                  -->
+                            <p class="discount-tag-2" [ngClass]="{'no-discount':$index===3}">
+                                <span>{{productDetail.discount}}</span>
+                            </p>
+                            <div class="flex flex-col items-center gap-[.2rem]">
+
+
+                                <div class="wishlist-div">
+                                    <!-- [ngClass]="productDetails.wishlistSelected ? 'bgred' : 'bgwhite'" -->
+                                    <!-- <svg (click)="addWishDetail(productDetail)"
+                                        [ngClass]="productDetail.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
+                                        height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        {{productDetail.wishlists}}
+                                    </svg> -->
+                                    <svg (click)="toggleDetailWishlist(productDetail)"
+                                        [ngClass]="productDetail.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
+                                        height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        {{productDetail.wishlists}}
+                                    </svg>
+                                </div>
+
+
+                                <!-- else{
+                        <img src={{productDetails.iswishList}} alt="">
+                    } -->
+                                <!-- <img src="Quick View.svg" alt=""> -->
+                                <div class="quick-view-div">
+
+                                    <!-- <img (click)="imageClick(productDetail)" src={{productDetail.productView}} alt=""> -->
+                                    <svg class="view" (click)="imageClick(productDetail)" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M21.2565 10.962C21.7305 11.582 21.7305 12.419 21.2565 13.038C19.7635 14.987 16.1815 19 11.9995 19C7.81752 19 4.23552 14.987 2.74252 13.038C2.51191 12.7411 2.38672 12.3759 2.38672 12C2.38672 11.6241 2.51191 11.2589 2.74252 10.962C4.23552 9.013 7.81752 5 11.9995 5C16.1815 5 19.7635 9.013 21.2565 10.962V10.962Z"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        src={{productDetail.productView}}
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <img src="home  page/havit game pad.png" alt=""> -->
+                        <img (click)="imageClick(productDetail)" [ngClass]="{ 'cooler-img': $index === 2,  }"
+                            src={{productDetail.image}} alt="">
+                        <button (click)="addItemDetail(productDetail)" class="add-cart">Add To Cart</button>
+                    </div>
+                    <div class="product-details">
+                        <!-- <h3>HAVIT HV-G92 Gamepad</h3> -->
+                        <h3>{{productDetail.name}}</h3>
+                        <div class="flex gap-[1rem] text-[.9rem]">
+
+                            <!-- <p>$120</p> -->
+                            <p>&dollar;{{productDetail.price}}</p>
+                            <!-- <p class="discount-price">$160</p> -->
+                            <p class="discount-price">{{productDetail.discountPrice}}</p>
+                        </div>
+                        <div class="flex gap-[.5rem]">
+                            <!-- <img src="Five star.svg" alt=""> -->
+                            <img src={{productDetail.rating}} alt="">
+                            <!-- <p>(88)</p> -->
+                            <p>{{productDetail.ratingNo}}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+
+
+            </div>
+        </div>
+
+    </section>
+</main>

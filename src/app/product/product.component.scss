@@ -1,0 +1,291 @@
+.arrow-left {
+    padding: 0.4rem;
+    background: rgba(245, 245, 245, 1);
+    border-radius: 100%
+}
+
+.arrow-left img {
+    width: 1.4rem;
+}
+
+.arrow-right {
+    padding: 0.6rem;
+    background: rgba(245, 245, 245, 1);
+    border-radius: 100%
+}
+
+.flag {
+    width: 1rem;
+    height: 2rem;
+    background-color: rgb(219, 68, 68);
+    border-radius: .2rem;
+}
+
+.flag~h4 {
+    font-size: 0.9rem;
+    color: rgb(219, 68, 68);
+    font-weight: 700;
+
+}
+
+.today {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.Flash-sale {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Flash-sale h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.view {
+    stroke: black;
+}
+
+.view:hover {
+    stroke: white;
+}
+
+.count-timer div p:nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.count-timer div~p {
+    font-size: 1.6rem;
+    align-self: end;
+}
+
+.day p:nth-child(1) {
+    font-size: .7rem;
+
+}
+
+.hour p:nth-child(1) {
+    font-size: 0.7rem;
+}
+
+.minutes p:nth-child(1) {
+    font-size: 0.7rem;
+}
+
+.seconds p:nth-child(1) {
+    font-size: 0.7rem;
+}
+
+.product-image {
+    display: flex;
+    flex-direction: column;
+    // max-width: 12rem;
+    border: 1px solid black;
+    padding-inline: .5rem;
+    padding: .5rem .5rem 2rem 0.5rem;
+    position: relative;
+    transition: all 1s linear;
+    height: 100%;
+    background: rgba(245, 245, 245, 1);
+    border: none;
+
+
+
+}
+
+.product-image:hover .add-cart {
+    display: block;
+    bottom: 0%;
+    transition: all 1s linear;
+
+}
+
+.product-image>img {
+    width: 8rem;
+    align-self: center;
+}
+
+.product-image-grid {
+    // position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.wishlist-div {
+    border: 1px solid;
+    padding: 0.2rem 0.4rem;
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    stroke: black;
+
+}
+
+.wishlist-div:hover {
+    // background-color: rgb(219, 68, 68);
+    // stroke: white;
+    background: #0000003d;
+    stroke: white;
+    fill: white;
+
+}
+
+.quick-view-div {
+    border: 1px solid;
+    // padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.3rem;
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    stroke: black;
+
+}
+
+.quick-view-div:hover {
+    background: #0000003d;
+    stroke: white;
+
+
+}
+
+.quick-view-div img {
+    width: 1.3rem;
+}
+
+.add-cart {
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: -10%;
+    left: 0px;
+    display: none;
+    transition: all 1s linear;
+
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    text-wrap: nowrap;
+    font-size: .9rem;
+}
+
+.product-details h3 {
+    font-weight: 600;
+}
+
+.product-details p:nth-child(1) {
+    color: red;
+    font-weight: 500;
+
+}
+
+.discount-tag {
+    width: 3rem;
+    height: 1.3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    // background: red;
+    background: rgba(219, 68, 68, 1);
+
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.discount {
+    visibility: hidden;
+}
+
+.discount-tag-2 {
+    visibility: hidden;
+}
+
+.discount-tag span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.large-img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.small-img {
+    width: 100px;
+}
+
+.second-img {
+    width: 10rem !important;
+}
+
+.product-image-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    // align-items: center;
+}
+
+.discount-price {
+    text-decoration: line-through;
+    color: #000000b0;
+    text-decoration-color: #000000b0 !important;
+}
+
+.add-cart:hover {}
+
+.bgRed {
+    fill: red;
+    width: 1rem;
+}
+
+.bgWhite {
+    stroke: black;
+    width: 1rem;
+}
+
+.bgWhite:hover {
+    // fill: white;
+}
+
+@media(max-width:978px) {
+    .product-image-grid {
+        // position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+        gap: 1rem;
+    }
+
+}
+
+@media((min-width:591px) and (max-width:600px)) {
+    .product-image-grid {
+        grid-template-columns: repeat(2, minmax(11rem, 1fr));
+    }
+
+}
+
+@media(max-width:600px) {
+    .count-timer {
+        display: none;
+    }
+
+    .Flash-sale h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+}

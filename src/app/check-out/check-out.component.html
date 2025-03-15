@@ -1,0 +1,107 @@
+<!-- <p>check-out works!</p> -->
+<section class="checkout-component">
+    <div class="flex gap-[.5rem]  px-[5rem] breadcrums">
+        <p>Account</p>
+        <p>/</p>
+        <p>My Account</p>
+        <p>/</p>
+        <p>Product</p>
+        <p>/</p>
+        <p>View Cart</p>
+        <p>/</p>
+        <p>CheckOut</p>
+    </div>
+    <div class="check-out-section">
+
+        <div class="customer-detail flex flex-col">
+            <h2>Billing Details</h2>
+            <form action="" class="flex flex-col gap-[1rem]">
+                <div class="flex flex-col gap-[.5rem]"><label for="name">First Name <span class="text-red-200">*
+                        </span></label><input type="text" id="name">
+                </div>
+                <div class="flex flex-col gap-[.5rem]"><label for="company">Company Name</label><input type="text"
+                        id="company"></div>
+                <div class="flex flex-col gap-[.5rem]"><label for="street-address">Street Address <span
+                            class="text-red-200">*</span></label><input type="text" id="street-address"></div>
+                <div class="flex flex-col gap-[.5rem]"><label for="apartment">Apartment, floor, etc.
+                        (optional)</label><input type="text" id="apartment">
+                </div>
+                <div class="flex flex-col gap-[.5rem]"><label for="town">Town/City <span
+                            class="text-red-200">*</span></label><input type="text" id="town">
+                </div>
+                <div class="flex flex-col  "><label for="Phone">Phone Number <span class="text-red-200">*</span></label>
+                    <input type="number" id="Phone">
+                </div>
+                <div class="flex flex-col gap-[.5rem]">
+                    <label for="email">Email Address <span class="text-red-200">*</span></label>
+                    <input type="email" id="email">
+                </div>
+                <div class="flex gap-[.5rem]"><input type="checkbox" class="ask-consent">
+                    <p class="save-info">Save this information for faster check-out next time</p>
+                </div>
+            </form>
+        </div>
+        <div class="checkout-summary">
+            <div class="flex flex-col gap-[1rem]">
+
+                @for(checkout of checkouts;track $index){
+                <div class="product-img-price">
+
+                    <div class="product-img flex gap-[.5rem] items-center">
+                        <!-- <img class="image" src="home  page/havic gamepad.png" alt=""> -->
+                        <img class="image" src={{checkout.image}} alt="">
+                        <!-- <h2 class="text-nowrap">Havic HV G-92 Gamepad</h2> -->
+                        <h2 class="text-nowrap">{{checkout.name}}</h2>
+                    </div>
+                    <p>{{checkout.price}}</p>
+                    <!-- <p>$650</p> -->
+                </div>
+                }
+            </div>
+
+            <div class="subtotal-summary flex justify-between">
+                <p>Subtotal:</p>
+
+
+                <!-- <p>$1750</p> -->
+                <p>{{totalPrice| currency}}</p>
+            </div>
+            <hr>
+            <div class=" shipping flex justify-between">
+                <p>Shipping:</p>
+                <p>Free</p>
+            </div>
+            <hr>
+            <div class="total-summary flex justify-between">
+                <p>Total:</p>
+                <!-- <p>$1750</p> -->
+                <p>{{totalPrice|currency}}</p>
+
+            </div>
+            <div class="flex justify-between">
+
+                <div class="flex gap-[.5rem]">
+                    <input type="radio" name="cash" id="bank">
+                    <p>Bank</p>
+                </div>
+                <div class="flex gap-[.5rem]">
+
+                    <img class="b-kash" src="b-kash1.svg" alt="pic"><img class="visa" src="visa.svg" alt="pic"><img
+                        class="master-card" src="mastercard.svg" alt="pic"><img class="nagad" src="nagad.svg" alt="pic">
+                </div>
+            </div>
+            <div class="flex gap-[.5rem]">
+                <input type="radio" name="cash" id="cash-on">
+                <p class="Cash-on-delivery">Cash on delivery</p>
+            </div>
+            <div class=" cart-coupon flex gap-[.5rem] items-start">
+                <input class="coupon" type="text" placeholder="Coupon Code">
+                <button class="coupon-button" disabled>Apply Coupon</button>
+            </div>
+            <button class="place-order" (click)="placaOrder()">Place Order</button>
+
+
+        </div>
+    </div>
+
+</section>

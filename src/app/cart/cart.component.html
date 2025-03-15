@@ -1,0 +1,112 @@
+<!-- <p>cart works!</p> -->
+<section class="cart-section">
+    <div class="flex gap-[.5rem] breadcrums">
+        <p>Home</p>
+        <p>/</p>
+        <p>Cart</p>
+    </div>
+    <div class="table-section-parent">
+        <div class="cart-table">
+
+            <div class="table-section">
+                <table>
+                    <!-- <div class="product-table"> -->
+                    <tr class="heading">
+
+
+
+                        <th class="product-data-head w-[11rem]">Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th class="total">Subtotal</th>
+                    </tr>
+                    <!-- </div> -->
+                    @for(productCart of productCarts;track $index;){
+                    <tr class="data">
+
+                        <td class="image-field w-[20rem] px-[1rem]">
+                            <div class="product-data">
+                                <div class="product-img flex gap-[.5rem] items-center">
+                                    <!-- <img class="image" src="home  page/havic gamepad.png" alt=""> -->
+                                    <img class="image" src={{productCart.image}} alt="">
+                                    <!-- <h2 class="text-nowrap">Havic HV G-92 Gamepad</h2> -->
+                                    <h2 class="text-nowrap">{{productCart.name}}</h2>
+                                </div>
+                            </div>
+                        </td>
+
+                        <!-- <td>$650</td> -->
+                        <td>{{productCart.price}}</td>
+                        <td>
+                            <div class="counter flex">
+                                <!-- <p>01</p> -->
+                                <p>{{productCart.quantity}}</p>
+                                <!-- <input type="number" min="1" [(ngModel)]="productCart.quantity"
+                            (change)="updateQuantity(productCart, productCart.quantity)" /> -->
+                                <div class="counter-symbol flex flex-col">
+                                    <button><img (click)="increaseCartNumber(productCart.id)" class="counter-up"
+                                            src="counter-up-arrow.svg" alt=""></button>
+                                    <button><img (click)="decreaseCartNumber(productCart.id)" class="counter-down"
+                                            src="counter-down-arrow.svg" alt=""></button>
+                                </div>
+                            </div>
+                        </td>
+
+                        <!-- <td>$650</td> -->
+                        <td class="subtotal">{{ productCart.subtotal }}</td>
+
+
+
+
+
+
+                    </tr>
+                    }
+                </table>
+            </div>
+
+            <div class="flex justify-between gap-[1rem]">
+                <button class="return-shop" routerLink="/product-details">Return To Shop</button>
+                <button class="update-cart" (click)="update()">Update Cart</button>
+            </div>
+        </div>
+        <div class="cart-total-section">
+
+            <div class=" cart-coupon flex gap-[.5rem] items-start">
+                <input class="coupon" type="text" placeholder="Coupon Code">
+                <button class="coupon-button">Apply Coupon</button>
+            </div>
+
+            <div class="cart-total">
+                <h2>Cart Total</h2>
+                <div class="subtotal-summary flex justify-between">
+                    <p>Subtotal:</p>
+
+
+                    <!-- <p>$1750</p> -->
+                    <!-- <p>{{totalPrice|currency}}</p> -->
+                    <!-- <p>{{getTotalPrice()|currency:'symbol':'1.0-0'}}</p> -->
+                    <p>{{ getTotalPrice() | currency: 'USD':'symbol':'1.0-0' }}</p>
+                </div>
+                <hr>
+                <div class=" shipping flex justify-between">
+                    <p>Shipping:</p>
+                    <p>Free</p>
+                </div>
+                <hr>
+                <div class="total-summary flex justify-between">
+                    <p>Total:</p>
+                    <!-- <p>$1750</p> -->
+                    <!-- <p>{{totalPrice|currency}}</p> -->
+                    <p>{{ getTotalPrice() | currency: 'USD':'symbol':'1.0-0' }}</p>
+
+                </div>
+                <button routerLink="/Check-out">Procees to checkout</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="cart-total-section">
+
+</section>

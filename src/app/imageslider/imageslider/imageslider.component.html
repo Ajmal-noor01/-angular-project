@@ -1,0 +1,17 @@
+<!-- <p>imageslider works!</p> -->
+<div class="slides">
+    <div class="slide" [style.background-image]="'url('+slides[currentSlide]?.image+')'">
+        <!-- encodeURI(slides[currentSlide]?.image)//slides[currentSlide].image -->
+        <!-- [ngStyle]="{ 'height': slideHeight + '%', 'width': slideWidth + '%' }" -->
+    </div>
+    @if(indicatorVisible){
+
+    <div id="indicators">
+        @for(slide of slides;track $index){
+        <div (click)="jumpToSlide($index)" class="indicator " [ngClass]="{active:$index===currentSlide}"></div>
+        }
+    </div>
+    }
+    <!-- <button (click)="next()">next</button>
+    <button (click)="previous()">Previous</button> -->
+</div>
