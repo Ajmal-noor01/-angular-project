@@ -77,7 +77,7 @@
                     <img class="cursor-pointer" (click)="imageClickProduct(product)"
                         [ngClass]="{ 'large-img': $index === 4, 'second-img':$index=== 1 ,'tv':$index==2,'havic':$index===3}"
                         src={{product.image}} alt="">
-                    <button class="cursor-pointer" (click)="addItem(product)" class="add-cart">Add To Cart</button>
+                    <button (click)="addItem(product)" class="add-cart cursor-pointer">Add To Cart</button>
                 </div>
                 <div class="product-details">
                     <h3>{{product.name}}</h3>
