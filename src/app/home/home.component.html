@@ -139,10 +139,10 @@
                         </div>
                     </div>
                 </div>
-                <img (click)="imageClickSell(sellProduct)"
+                <img class="cursor-pointer" (click)="imageClickSell(sellProduct)"
                     [ngClass]="{'coat':$index===0,'bag':$index===1, 'cooler-img': $index === 2, 'book-shelf':$index===3 }"
                     src={{sellProduct.image}} alt="pic">
-                <button (click)="addProduct(sellProduct)" class="add-cart">Add To Cart</button>
+                <button class="cursor-pointer" (click)="addProduct(sellProduct)" class="add-cart">Add To Cart</button>
             </div>
             <div class="product-details">
                 <h3>{{sellProduct.name}}</h3>
@@ -244,10 +244,11 @@
                             </div>
                         </div>
                     </div>
-                    <img (click)="imageClick(ExploreProduct)"
+                    <img class="cursor-pointer" (click)="imageClick(ExploreProduct)"
                         [ngClass]="{ 'Explore-first-img': $index === 0,'Explore-camera':$index===1,'Explore-laptop':$index===2 ,'Explore-curology':$index===3,'Explore-car':$index===4,'Explore-cleats':$index===5,'Explore-Gp11-gamepad':$index===6,'Explore-quilted':$index===7 }"
                         src={{ExploreProduct.image}} alt="pic">
-                    <button (click)="addProductExplore(ExploreProduct)" class="add-cart">Add To Cart</button>
+                    <button class="cursor-pointer" (click)="addProductExplore(ExploreProduct)" class="add-cart">Add To
+                        Cart</button>
                 </div>
                 <div class="product-details">
                     <h3>{{ExploreProduct.name}}</h3>
