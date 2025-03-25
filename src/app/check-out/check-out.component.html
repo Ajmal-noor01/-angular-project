@@ -1,6 +1,5 @@
-<!-- <p>check-out works!</p> -->
 <section class="checkout-component">
-    <div class="flex gap-[.5rem]  px-[5rem] breadcrums">
+    <div class="flex gap-[.5rem]  px-[4rem] breadcrums">
         <p>Account</p>
         <p>/</p>
         <p>My Account</p>
@@ -12,7 +11,6 @@
         <p>CheckOut</p>
     </div>
     <div class="check-out-section">
-
         <div class="customer-detail flex flex-col">
             <h2>Billing Details</h2>
             <form action="" class="flex flex-col gap-[1rem]">
@@ -42,50 +40,39 @@
             </form>
         </div>
         <div class="checkout-summary">
-            <div class="flex flex-col gap-[1rem]">
-
+            <div class="flex flex-col gap-[2rem]">
                 @for(checkout of checkouts;track $index){
                 <div class="product-img-price">
-
                     <div class="product-img flex gap-[.5rem] items-center">
-                        <!-- <img class="image" src="home  page/havic gamepad.png" alt=""> -->
                         <img class="image" src={{checkout.image}} alt="">
-                        <!-- <h2 class="text-nowrap">Havic HV G-92 Gamepad</h2> -->
                         <h2 class="text-nowrap">{{checkout.name}}</h2>
                     </div>
-                    <p>{{checkout.price}}</p>
-                    <!-- <p>$650</p> -->
+                    <p>{{checkout.price |currency : 'USD':'symbol':'1.0-0'}}</p>
                 </div>
                 }
             </div>
-
-            <div class="subtotal-summary flex justify-between">
-                <p>Subtotal:</p>
-
-
-                <!-- <p>$1750</p> -->
-                <p>{{totalPrice| currency}}</p>
-            </div>
-            <hr>
-            <div class=" shipping flex justify-between">
-                <p>Shipping:</p>
-                <p>Free</p>
-            </div>
-            <hr>
-            <div class="total-summary flex justify-between">
-                <p>Total:</p>
-                <!-- <p>$1750</p> -->
-                <p>{{totalPrice|currency}}</p>
-
+            <div class="flex flex-col gap-[1rem]">
+                <div class="subtotal-summary flex justify-between items-center">
+                    <p>Subtotal:</p>
+                    <p>{{totalPrice|currency : 'USD':'symbol':'1.0-0'}}</p>
+                </div>
+                <hr>
+                <div class="shipping flex justify-between items-center">
+                    <p>Shipping:</p>
+                    <p>Free</p>
+                </div>
+                <hr>
+                <div class="total-summary flex justify-between items-center">
+                    <p>Total:</p>
+                    <p>{{totalPrice|currency : 'USD':'symbol':'1.0-0'}}</p>
+                </div>
             </div>
             <div class="flex justify-between">
-
                 <div class="flex gap-[.5rem]">
                     <input type="radio" name="cash" id="bank">
                     <p>Bank</p>
                 </div>
                 <div class="flex gap-[.5rem]">
-
                     <img class="b-kash" src="b-kash1.svg" alt="pic"><img class="visa" src="visa.svg" alt="pic"><img
                         class="master-card" src="mastercard.svg" alt="pic"><img class="nagad" src="nagad.svg" alt="pic">
                 </div>
@@ -98,10 +85,7 @@
                 <input class="coupon" type="text" placeholder="Coupon Code">
                 <button class="coupon-button" disabled>Apply Coupon</button>
             </div>
-            <button class="place-order" (click)="placaOrder()">Place Order</button>
-
-
+            <button class="place-order" (click)="placeOrder()">Place Order</button>
         </div>
     </div>
-
 </section>

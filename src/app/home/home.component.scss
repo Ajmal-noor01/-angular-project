@@ -11,10 +11,9 @@ button {
     padding-right: 1rem;
     font-weight: 400;
     text-wrap: nowrap;
-    // padding-block: 1rem;
-    padding-top: 1.5rem;
     padding-bottom: 0rem;
-
+    padding-top: 2.1rem;
+    justify-content: space-between;
 }
 
 .featured {
@@ -27,12 +26,6 @@ button {
     font-size: 1.8rem;
     font-weight: 700;
 }
-
-.carousel-section-header {
-    // padding-top: 1rem;
-    // margin-top: 1rem;
-}
-
 
 .electronic-img {
     display: none;
@@ -72,7 +65,6 @@ button {
 }
 
 .right {
-    // width: 1rem;
     display: block;
 }
 
@@ -104,10 +96,6 @@ button {
 
 .categories button {
     width: 1rem;
-}
-
-.right {
-    // width: 1rem;
 }
 
 .fa-solid.fa-angle-down {
@@ -229,18 +217,18 @@ section {
     font-weight: 700;
 }
 
+.variety {
+    padding-block: 1rem;
+}
+
 .category {
     display: grid;
-    // grid-template-columns: repeat(6, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(200px, 9rem));
-
     justify-content: space-between;
     gap: 1rem;
-    padding-bottom: 4rem;
 }
 
 .product-category {
-    // max-width: 9rem;
     width: 100%;
     border: 1px solid black;
     display: flex;
@@ -254,6 +242,7 @@ section {
 .product-category:hover {
     background-color: rgba(219, 68, 68, 1);
     color: white;
+    transition: all .5s ease-in-out;
 }
 
 .image {
@@ -291,7 +280,6 @@ section {
     height: 2rem;
     background-color: rgb(219, 68, 68);
     border-radius: .2rem;
-
 }
 
 .Flash-sale {
@@ -306,26 +294,23 @@ section {
 }
 
 .best-selling~button {
-    max-width: 8rem;
     border: 1px solid;
     width: 100%;
-    padding-block: 0.4rem;
     border-radius: .3rem;
     background: rgba(219, 68, 68, 1);
     color: white;
+    padding-block: .8rem;
+    max-width: 9rem;
     cursor: pointer;
 }
 
 .best-selling~button:hover {
     opacity: .9;
-
 }
 
 .product-image {
     display: flex;
     flex-direction: column;
-    // max-width: 12rem;
-    // border: 1px solid black;
     border-radius: .2rem;
     padding-inline: .5rem;
     padding: .5rem .5rem 2rem 0.5rem;
@@ -334,25 +319,23 @@ section {
     height: 100%;
     background: rgba(245, 245, 245, 1);
     cursor: pointer;
-
-
+    border-radius: 0.3rem;
+    // justify-content: space-between;
 }
 
 .product-image:hover .add-cart {
     display: block;
     bottom: 0%;
     transition: all 1s linear;
-
 }
 
 .product-image>img {
-    width: 8rem;
+    // width: 7.5rem;
     align-self: center;
-    margin-block: auto;
+    // margin-block: auto;
 }
 
 .product-image-grid-2 {
-    // position: relative;
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     gap: 1rem;
@@ -368,12 +351,9 @@ section {
 }
 
 .wishlist-div:hover {
-    // background-color: rgb(219, 68, 68);
-    // stroke: white;
     background: #0000003d;
     stroke: white;
     fill: white;
-
 }
 
 .bgred {
@@ -383,8 +363,7 @@ section {
 
 .quick-view-div {
     border: 1px solid;
-    // padding: 0.2rem 0.4rem;
-    padding: 0.2rem 0.3rem;
+    padding: 0.1rem 0.3rem;
     border-radius: 100%;
     background-color: white;
     cursor: pointer;
@@ -393,16 +372,13 @@ section {
 }
 
 .quick-view-div:hover {
-    // background-color: rgb(219, 68, 68);
-    // stroke: white;
     background: #0000003d;
     stroke: white;
-    // fill: white;
-
 }
 
 .view {
     stroke: black;
+    width: 1.3rem;
 }
 
 .view:hover {
@@ -432,7 +408,6 @@ section {
     left: 0px;
     display: none;
     transition: all 1s linear;
-
 }
 
 .product-details {
@@ -451,7 +426,6 @@ section {
 .product-details p:nth-child(1) {
     color: red;
     font-weight: 500;
-
 }
 
 .discount-tag {
@@ -479,9 +453,26 @@ section {
     justify-content: center;
 }
 
+.coat {
+    width: 7.5rem;
+    margin-top: -1rem;
+}
+
+.bag {
+    // width: 10rem;
+    width: 9.2rem;
+    margin-top: -1rem;
+}
+
 .cooler-img {
     width: 10rem !important;
-    // height: 8rem;
+    margin-top: 0rem;
+}
+
+.book-shelf {
+    width: 8rem;
+    margin-top: -2.5rem;
+    margin-right: 1rem;
 }
 
 .small-img {
@@ -495,12 +486,11 @@ section {
 .product-image-details {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
     width: 100%;
     max-width: 100%;
     height: 100%;
     justify-content: space-between;
-    // align-items: center;
 }
 
 .discount-price {
@@ -509,65 +499,58 @@ section {
     text-decoration-color: #000000b0 !important;
 }
 
-.add-cart:hover {}
-
-
-
 .select-color-parent {
-    width: 1rem;
-    // border: 1px solid black;
     border-radius: 50%;
     padding: 0.2rem;
-    height: 1rem;
     position: relative;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .select-color-parent:hover {
     border: 1px solid black;
-
 }
 
 .select-color {
-    // width: 2rem;
-    // height: 2rem;
+
     background-color: red;
-    // width: 0.5rem;
     border-radius: 50%;
-    // height: 0.5rem;
-    // margin-inline: auto;
-    // padding-inline: 0.3rem;
-    width: 0.7rem;
-    height: 0.7rem;
     position: absolute;
-    bottom: 12%;
-    left: 12%;
-    transform: translateY(40%);
-    transform: translateX(0%);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .select-color:hover {
     border: 1px solid black;
     padding: .2rem;
+    height: .9rem;
+    width: .9rem;
 }
 
 .select-color-red {
     background-color: rgb(219, 68, 68);
-    // width: .5rem;
-    // height: .5rem;
-    // width: 1rem;
-    // height: 1rem;
     border-radius: 50%;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
-    bottom: 12%;
-    left: 12%;
-    transform: translateY(40%);
-    transform: translateX(0%);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.select-color:hover {
+    height: .9rem;
+    width: .9rem;
 }
 
 .color-select {
-    // display: none;
     background-color: #EEFF61;
 }
 
@@ -588,8 +571,6 @@ section {
     color: white;
     border: none;
     border-radius: 0.2rem;
-    // visibility: hidden;
-
 }
 
 .new-tag {
@@ -604,28 +585,31 @@ section {
     display: flex;
     gap: 1rem;
     padding-block: 0rem;
-
-
+    padding-bottom: 5rem;
 }
 
 .carousel-section {
     width: 100%;
-    border: 1px solid black;
-    height: 20rem;
-    margin-block: 2rem;
+    // border: 1px solid black;
+    height: 18.2rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 
 
 .head-band-banner {
     display: flex;
-    // background-color: black;
-
+    padding-block: 0;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
 }
 
 .head-band-category-img {
     position: relative;
     width: 100%;
+    // height: 26rem;
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -633,19 +617,8 @@ section {
     gap: 1.7rem;
 }
 
-.head-band-categories {
-    // position: absolute;
-    // color: white;
-    // // z-index: 0;
-    // padding-block: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 1rem;
-}
-
 .head-band-categories-child {
     color: white;
-    // z-index: 0;
     padding-block: 2rem;
     display: flex;
     flex-direction: column;
@@ -659,10 +632,10 @@ section {
 .head-band-categories button {
     align-items: self-start;
     text-align: center;
-    max-width: 8rem;
     border: 1px solid;
-    padding-block: .3rem;
     border-radius: .2rem;
+    max-width: 10rem;
+    padding-block: .8rem;
 }
 
 .head-band-categories button:hover {
@@ -670,9 +643,7 @@ section {
 }
 
 .head-band-img {
-    // position: absolute;
-    // z-index: 4;
-    width: 28rem;
+    width: 33rem;
 }
 
 .head-categories {
@@ -691,7 +662,6 @@ section {
     flex-direction: column;
     align-items: center;
     border-radius: 100%;
-    // padding: 0.4rem 0.7rem;
     justify-content: center;
 }
 
@@ -708,7 +678,6 @@ section {
 }
 
 .head-second {
-    // padding: 0.6rem 0.5rem;
     padding-inline: 0.4rem;
     padding-block: .5rem;
 }
@@ -728,24 +697,20 @@ section {
     font-weight: 700;
 }
 
-.view-all {}
-
 .explore-button {
-    max-width: 10.7rem;
     border: 1px solid;
     width: 100%;
-    padding-block: 0.3rem;
     border-radius: .2rem;
     cursor: pointer;
     background-color: rgba(219, 68, 68, 1);
     color: white;
+    padding-block: 0.8rem;
+    font-size: .9rem;
+    max-width: 13rem;
 }
 
 .explore-button:hover {
-    // background-color: rgba(219, 68, 68, 1);
-    // color: white;
     opacity: .9;
-
 }
 
 .index1 {
@@ -754,69 +719,25 @@ section {
 
 .index2 {
     visibility: hidden;
-    ;
 }
 
 .index3 {
     visibility: hidden;
-    ;
 }
 
 .index4 {
     visibility: hidden;
-    ;
 }
 
-// .new-arrival {
-//     // display: grid;
-//     // grid-template-columns: repeat(2, 1fr);
-//     display: flex;
-
-
-
-//     gap: 2rem;
-
-// }
-
-// .new-arrival {
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr);
-//     grid-template-rows: repeat(2, 1fr);
-//     grid-column-gap: 30px;
-//     grid-row-gap: 30px;
-// }
-
-// .playstation {
-//     grid-area: 1 / 1 / 2 / 2;
-// }
-
-// .womens-collection {
-//     grid-area: 1 / 1 / 3 / 3;
-// }
-
-// .speakers {
-//     grid-area: 1 / 3 / 2 / 5;
-// }
-
-// .speakers {
-//     grid-area: 2 / 3 / 3 / 4;
-// }
-
-// .div5 {
-//     grid-area: 2 / 4 / 3 / 5;
-// }
 
 
 .playstation {
     background: black;
-    // max-width: 21rem;
-    // position: relative;
     padding-top: 2rem;
-    // grid-area: playstation;
-    // width: fit-content;
     display: flex;
     max-width: 20rem;
     overflow: hidden;
+    position: relative;
 }
 
 .playstation-description {
@@ -824,25 +745,22 @@ section {
     flex-direction: column;
     color: white;
     align-items: self-start;
-    // position: absolute;
-    // top: 69%;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     gap: .5rem;
-    // TOP: 78%;
     justify-content: end;
-    margin-left: -20rem;
+    // margin-left: -20rem;
     padding-bottom: 1rem;
     left: 100%;
     border: none;
     background: none;
-
+    position: absolute;
+    transform: translateX(-50%);
 }
 
 .playstation>img {
     width: fit-content;
     HEIGHT: 100%;
     width: 20rem;
-
 }
 
 .playstation-description p {
@@ -854,11 +772,47 @@ section {
     border-bottom: 1px solid;
 }
 
-.womens-collection {
-    // grid-area: women-collection;
-    // position: relative;
+.playstation-new {
     display: flex;
-    // overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    justify-content: end;
+    background-color: black;
+    padding-left: 1rem;
+    border-radius: 0.6rem;
+}
+
+.playstation-img {
+    width: 100%;
+    height: 17rem;
+    max-width: 100%;
+}
+
+.playstation-description-new {
+    color: white;
+    // margin-right: -17rem;
+    color: white;
+    z-index: 1;
+    justify-content: end;
+    align-items: self-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: .5rem;
+    padding-left: 0;
+    margin-right: -10rem;
+
+    background: none;
+}
+
+.playstation p {
+    margin-right: -9rem;
+    font-size: .9rem;
+}
+
+
+.womens-collection {
+    display: flex;
     width: 100%;
     max-width: 100%;
     justify-content: end;
@@ -871,10 +825,7 @@ section {
 }
 
 .womens-collection-description {
-    // position: absolute;
     color: white;
-    // top: 63%;
-    // padding-left: 1rem;
     margin-right: -17rem;
     color: white;
     z-index: 1;
@@ -882,12 +833,10 @@ section {
     align-items: self-start;
     display: flex;
     flex-direction: column;
-    // padding-left: 2rem;
     margin-bottom: 1rem;
     gap: .5rem;
     padding-left: 0;
     margin-right: -10rem;
-    // margin-right: -10.4rem;
     bottom: 0%;
     left: 0%;
     background: none;
@@ -907,7 +856,6 @@ section {
 }
 
 .speakers {
-    // grid-area: speakers;
     background: black;
     padding-block: 1rem;
     padding-inline: 1rem;
@@ -922,9 +870,7 @@ section {
 }
 
 .speakers-description {
-    // top: 43%;
     padding-left: 0;
-    // position: absolute;
     COLOR: WHITE;
     ALIGN-ITEMS: START;
     margin-top: -4.6rem;
@@ -932,37 +878,26 @@ section {
 }
 
 .perfume {
-    // grid-area: perfume;
     background: black;
     padding-inline: 1rem;
     padding-block: 1rem;
-    // position: relative;
     overflow: hidden;
 }
 
 .perfume>img {
-    /* width: 10rem; */
     align-items: end;
     margin-block: 0;
 }
 
 .perfume-description {
-    // top: 52%;
     padding-left: 0;
-    // position: ABSOLUTE;
     COLOR: white;
-    // TOP: 32%;
     ALIGN-ITEMS: START;
     margin-top: -3rem;
     gap: .5rem;
-
 }
 
-//test
 .new-arrival {
-    // display: grid;
-    // grid-template-columns: 2fr 2fr;
-    /* PlayStation takes more space */
     display: flex;
     gap: 20px;
     width: 100%;
@@ -970,31 +905,13 @@ section {
     margin: auto;
 }
 
-.playstation {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 100%;
-    width: 100%;
-}
+
 
 .playstation img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-// .playstation-description {
-//     position: absolute;
-//     bottom: 20px;
-//     left: 20px;
-//     color: white;
-//     background: rgba(0, 0, 0, 0.5);
-//     padding: 10px;
-//     border-radius: 5px;
-// }
-
-
 
 .womens-collection {
     position: relative;
@@ -1005,16 +922,6 @@ section {
     height: auto;
     border-radius: 10px;
 }
-
-// .womens-collection-description {
-//     position: absolute;
-//     bottom: 20px;
-//     left: 20px;
-//     color: white;
-//     background: rgba(0, 0, 0, 0.5);
-//     padding: 10px;
-//     border-radius: 5px;
-// }
 
 .speaker-perfume {
     display: grid;
@@ -1052,6 +959,8 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 50rem;
+    margin-inline: auto;
 }
 
 .gototop {
@@ -1064,6 +973,45 @@ section {
     padding-bottom: 5rem;
 }
 
+.Explore-first-img {
+    margin-top: -2rem;
+    width: 6rem;
+}
+
+.Explore-camera {
+    width: 9rem;
+    margin-top: -2.5rem;
+}
+
+.Explore-laptop {
+    margin-top: -2rem;
+}
+
+.Explore-curology {
+    margin-top: -1rem;
+    width: 11rem;
+}
+
+.Explore-car {
+    width: 10rem;
+    margin-top: -1rem;
+}
+
+.Explore-cleats {
+    width: 10rem;
+    margin-top: -2rem;
+}
+
+.Explore-Gp11-gamepad {
+    width: 10rem;
+    margin-top: -1rem;
+}
+
+.Explore-quilted {
+    width: 10rem;
+    margin-top: -1rem;
+}
+
 @media(max-width:978px) {
     .product-image-grid-2 {
         // position: relative;
@@ -1073,12 +1021,12 @@ section {
     }
 
     .head-band-img {
-        width: 24rem;
+        // width: 24rem;
+        width: 28rem;
     }
 
     .category {
         grid-template-columns: repeat(auto-fill, minmax(200px, 9rem));
-        // justify-content: center;
     }
 
     .product-category {
@@ -1105,15 +1053,19 @@ section {
         flex-direction: column;
     }
 
+    .carousel-section {
+        margin-left: 0rem;
+        margin-block: 0rem;
+    }
+
     .new-arrival {
-        // grid-template-columns: 1fr;
         flex-direction: column;
         height: 100% !important;
         max-width: 100%;
         margin-inline: 0;
         max-width: 100%;
         width: 100%;
-        /* max-height: 100vh; */
+        align-items: center;
     }
 
     .playstation {
@@ -1122,12 +1074,25 @@ section {
     }
 
     .playstation-description {
-        // left: 10%;
-        // bottom: 3%;
         background: none;
-        // margin-left: -43rem;
-        margin-left: -39rem;
+        // margin-left: -39rem;
+    }
 
+    .playstation-new {
+        width: fit-content;
+    }
+
+    .playstation-description-new {
+        // padding-left: 1rem;
+    }
+
+    .playstation-new>img {
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .womens-collection {
+        width: fit-content;
     }
 
     .womens-collection-description {
@@ -1179,9 +1144,8 @@ section {
         justify-content: space-between;
         border-right: none;
         padding-right: 0;
-    }
 
-    .electronics {}
+    }
 
     .electronic-img {
         display: block;
@@ -1215,19 +1179,27 @@ section {
         height: 20rem;
     }
 
-    // .new-arrival {
-    //     grid-template-areas: 'playstation  '
-    //         'womens-collection'
-    //         ' speakers '
-    //         'perfume';
-    // }
+    .carousel-category {
+        padding-bottom: 2rem;
+    }
+
+    section {
+        padding-block: 1rem;
+    }
+
+    .product-component {
+        padding-block: 1rem;
+    }
 
     .head-band-categories h2 {
         font-size: 1.7rem;
     }
 
+    .head-band-banner {
+        padding-block: 2rem;
+    }
+
     .head-timers {
-        /* max-width: 10rem; */
         width: 100%;
         gap: 0.8rem;
     }
@@ -1269,13 +1241,20 @@ section {
     }
 
     .head-band-category-img {
-        // padding-inline: 1rem;
         flex-direction: column-reverse;
     }
 
-    // .service div img {
-    //     width: 4rem;
-    // }
+    .Explore-first-img {
+        width: 6rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .Explore-car {
+        width: 9rem;
+        margin-top: 0;
+    }
+
     .service div h2 {
         font-weight: bold;
     }
@@ -1290,8 +1269,6 @@ section {
     }
 
     .delivery-service {
-        // width: 100%;
-        // max-width: 4rem;
         width: 4rem;
     }
 
@@ -1307,7 +1284,7 @@ section {
 
 @media(max-width:768px) {
     .playstation-description {
-        margin-left: -36rem;
+        // margin-left: -36rem;
     }
 }
 
@@ -1343,6 +1320,28 @@ section {
         width: 100%;
     }
 
+    .head-hours {
+        max-width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .head-days {
+        max-width: 2.7rem;
+        height: 2.7rem;
+    }
+
+    .head-minutes {
+        max-width: 2.8rem;
+        height: 2.8rem;
+        padding-inline: 0.5rem;
+        font-size: .9rem;
+    }
+
+    .head-second {
+        max-width: 2.7rem;
+        height: 2.7rem;
+    }
+
     .browse-category {
         font-size: 1.4rem;
         text-wrap: nowrap;
@@ -1355,6 +1354,7 @@ section {
 
     .best-selling~button {
         max-width: 6rem;
+        padding-block: .5rem;
     }
 
     .productExplore {
@@ -1369,10 +1369,9 @@ section {
     }
 
     .playstation-description {
-        margin-left: -18rem;
-        /* position: absolute; */
-        padding-left: 1rem;
-        left: -149%;
+        // margin-left: -18rem;
+        // padding-left: 1rem;
+        // left: -149%;
     }
 
     .category {
@@ -1380,9 +1379,7 @@ section {
     }
 
     .new-arrival-head {
-        .new-arrival-head {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+        font-size: 1.8rem;
+        font-weight: 700;
     }
 }

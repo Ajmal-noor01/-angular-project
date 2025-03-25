@@ -1,12 +1,9 @@
-<!-- <p>signup works!</p> -->
 <div class="signup-form">
-    <img src="signup banner.png" alt="pic">
+    <img src="signup-banner.png" alt="pic">
     <div class="create-form">
         <div class="create-form-input">
-
             <h2 class="create-account">Create an account</h2>
             <h4>Enter your details below</h4>
-
             <form [formGroup]="userForm">
                 <div class="flex flex-col gap-[.5rem]">
                     <input class="border-b" type="text" placeholder="Name" formControlName="name">
@@ -14,7 +11,6 @@
                     @if(userForm.get("name")?.hasError("required")){
                     <p class="text-red-900 text-xs ">this field is required</p>
                     }
-
                     }
                 </div>
                 <div class="flex flex-col gap-[.5rem]">
@@ -38,7 +34,6 @@
                     @if(userForm.get("password")?.hasError("maxlength")){
                     <p class="text-red-900 text-xs ">Password length should be not more than 8 letters</p>
                     }
-
                     }
                 </div>
                 <div class="account-sign-button">
@@ -54,6 +49,5 @@
                 </div>
             </form>
         </div>
-
     </div>
 </div>

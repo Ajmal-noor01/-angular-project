@@ -10,20 +10,19 @@ import { Component } from '@angular/core';
 export class CheckOutComponent {
   checkouts: any[] = []
   totalPrice: number = 0
-
   ngOnInit() {
     this.checkouts = JSON.parse(localStorage.getItem("cartProducts") || '[]').map((product: any) => ({
       ...product,
       quantity: product.quantity || 1,
       subtotal: Number(product.price) * (product.quantity || 1),
     }));
-
     this.calculateTotalPrice();
   }
   calculateTotalPrice() {
     this.totalPrice = this.checkouts.reduce((sum, item) => sum + item.subtotal, 0);
+    return this.totalPrice
   }
-  placaOrder() {
+  placeOrder() {
     alert("Your Order has been placed Successfully")
   }
 }

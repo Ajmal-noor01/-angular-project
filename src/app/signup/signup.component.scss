@@ -23,9 +23,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    // padding-inline: 3rem;
     padding-block: 3rem;
-    // width: 100%;
 }
 
 .create-form-input {
@@ -37,7 +35,7 @@ button {
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .google-signup {
@@ -47,6 +45,11 @@ form {
     align-items: center;
     text-align: center;
     justify-content: center;
+}
+
+.create-form-input input {
+    padding-inline: 0;
+    padding-bottom: .5rem;
 }
 
 .create-account {
@@ -63,11 +66,9 @@ form {
     text-align: center;
     align-self: center;
     width: 100%;
-    gap: .5rem;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
-
-
 }
 
 .active {
@@ -79,7 +80,8 @@ form {
     border: 1px solid black;
     width: 100%;
     border-radius: .2rem;
-    padding-block: .3rem;
+    padding-block: 0.6rem;
+    font-size: .9rem;
 }
 
 .account-sign-button button:hover {
@@ -112,8 +114,6 @@ form {
     .create-form {
         margin-inline: auto;
         align-items: center;
-        // width: 30rem;
-        // border: solid black;
     }
 
     .create-form {
@@ -155,8 +155,6 @@ form {
 
 @media(max-width:600px) {
     .signup-form>img {
-
-        // width: 80.7%;
         padding-inline: 1rem;
     }
 

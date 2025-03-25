@@ -1,15 +1,10 @@
-<!-- <p>home works!</p> -->
 <section class="carousel-category">
     <div class="categories" id="categoriesid">
         <div class="flex gap-[2rem] justify-between items-center">
             <p>Woman’s Fashion</p>
-
-            <label for="woman" class="woman"><img class="right" src="home  page/right-arrow.svg" alt="">
+            <label for="woman" class="woman"><img class="right" src="home-page/right-arrow.svg" alt="pic">
                 <i class="fa-solid fa-angle-down"></i>
             </label>
-
-            <!-- <label for="woman" class="down"><i class="fa-solid fa-angle-down"></i></label> -->
-
         </div>
         <input type="checkbox" id="woman">
         <div class="woman-dropdown">
@@ -19,8 +14,7 @@
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Men’s Fashion</p>
-            <!-- <img src="home  page/right-arrow.svg" alt=""> -->
-            <label for="man" class="man"><img class="right" src="home  page/right-arrow.svg" alt="">
+            <label for="man" class="man"><img class="right" src="home-page/right-arrow.svg" alt="pic">
                 <i class="fa-solid fa-angle-down"></i>
             </label>
         </div>
@@ -32,72 +26,47 @@
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Electronics</p>
-            <button for="" class="electronics"><img class="electronic-img  " src="home  page/right-arrow.svg" alt=""> <i
-                    class="fa-solid fa-angle-down"></i></button>
-
-
-
+            <button for="" class="electronics"><img class="electronic-img  " src="home-page/right-arrow.svg" alt="pic">
+                <i class="fa-solid fa-angle-down"></i></button>
         </div>
-
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Home & Lifestyle</p>
-            <button for="" class="home"> <img class="home-img " src="home  page/right-arrow.svg" alt=""> <i
+            <button for="" class="home"> <img class="home-img " src="home-page/right-arrow.svg" alt="pic"> <i
                     class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Medicine</p>
-            <button for="" class="medicine"> <img class="medicine-img " src="home  page/right-arrow.svg" alt=""> <i
+            <button for="" class="medicine"> <img class="medicine-img " src="home-page/right-arrow.svg" alt="pic"> <i
                     class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Sports & Outdoor</p>
-            <button for="" class="sports"> <img class="sport-img " src="home  page/right-arrow.svg" alt=""> <i
+            <button for="" class="sports"> <img class="sport-img " src="home-page/right-arrow.svg" alt="pic"> <i
                     class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Baby’s & Toys</p>
-            <button for="" class="baby"> <img class="baby-img " src="home  page/right-arrow.svg" alt=""> <i
+            <button for="" class="baby"> <img class="baby-img " src="home-page/right-arrow.svg" alt="pic"> <i
                     class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Groceries & Pets</p>
-            <button for="" class="groceries"><img class="groceries-img " src="home  page/right-arrow.svg" alt="">
+            <button for="" class="groceries"><img class="groceries-img " src="home-page/right-arrow.svg" alt="pic">
                 <i class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
         <div class="flex gap-[3.4rem]  justify-between items-center">
             <p>Health & Beauty</p>
-            <button for="" class="health"><img class="health-img " src="home  page/right-arrow.svg" alt=""> <i
+            <button for="" class="health"><img class="health-img " src="home-page/right-arrow.svg" alt="pic"> <i
                     class="fa-solid fa-angle-down"></i></button>
-
-
-
         </div>
     </div>
-    <!-- <hr> -->
-
-    <!-- <div class="carousel-section-header"> -->
     <app-imageslider class="carousel-section" [slides]="slides"></app-imageslider>
-    <!-- </div> -->
-
 </section>
-<section class="flex flex-col gap-[3rem]">
+<section class="product-component">
+    <app-product></app-product>
+</section>
+<section class="variety flex flex-col gap-[3rem]">
     <div class="flex flex-col gap-[.7rem]">
-
         <div class="flex gap-[1rem] items-center">
             <div class="flag"></div>
             <h3>Categories</h3>
@@ -107,98 +76,46 @@
                 <h2 class="browse-category">Browse By Category</h2>
                 <div class="flex items-center gap-[.5rem] cursor-pointer ">
                     <div class="arrow-left hover:opacity-[.5]">
-
-                        <img src="home  page/icons_arrow-left.svg" alt="">
+                        <img src="home-page/icons_arrow-left.svg" alt="pic">
                     </div>
                     <div class="arrow-right hover:opacity-[.5]">
-
-                        <img src="home  page/slider right.svg" alt="">
+                        <img src="home-page/slider-right.svg" alt="pic">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="category">
-        @for(category of categories;track $index){
-
-        <div class="product-category">
-            <img class="image" src={{category.image}} alt="">
-            <!-- <svg class="image">{{category.image}}</svg> -->
-            <!-- <svg class="image" fill="currentColor">{{category.image}}</svg> -->
-            <p>{{category.para}}</p>
+    <div class="flex flex-col gap-[4rem]">
+        <div class="category">
+            @for(category of categories;track $index){
+            <div class="product-category">
+                <img class="image" src={{category.image}} alt="pic">
+                <p>{{category.para}}</p>
+            </div>
+            }
         </div>
-        }
-
+        <hr>
     </div>
-
-    <hr>
-
-
-
-    <!-- <app-product></app-product> -->
-
-    <!-- <app-product-details></app-product-details> -->
-    <!-- </section> -->
-    <!-- <section class="flex flex-col gap-[2rem]"> -->
-    <app-product></app-product>
 </section>
 <section class="flex flex-col gap-[3rem]">
     <div class="flex flex-col gap-[.7rem]">
-
         <div class="flex gap-[1rem]">
             <div class="flag"></div>
             <h3>This Month</h3>
         </div>
         <div class="flex justify-between items-center gap-[1rem]">
             <h2 class="best-selling">Best Selling Products</h2>
-            <!-- <div class="flex items-center gap-[.5rem]">
-            <div class="arrow-left">
-
-                <img src="home  page/icons_arrow-left.svg" alt="">
-            </div>
-            <div class="arrow-right">
-
-                <img src="home  page/slider right.svg" alt="">
-            </div>
-        </div> -->
             <button class="view-all">View All</button>
         </div>
     </div>
-
     <div class="product-image-grid-2">
         @for (sellProduct of sellProducts ; track $index;) {
-
-
         <div class="product-image-details">
-
-
             <div class="product-image">
                 <div class="flex justify-between">
-                    <!-- <p>-40&percnt;</p>
-                      -->
                     <p class="discount-tag-2"><span>{{sellProduct?.discount}}</span></p>
                     <div class="flex flex-col cursor-pointer items-center gap-[.2rem]">
-
-                        <!-- <img src="wishlist.svg" alt=""> -->
-                        <!-- <img [ngClass]="showColour?'bgRed':'bgWhite'" src={{sellProduct.wishlist}} alt=""> -->
-                        <!-- <svg [ngClass]="showColour?'bgRed':'bgWhite'" width="22" height="20" viewBox="0 0 22 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                                stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            {{sellProduct.wishlist}}
-                        </svg> -->
                         <div class="wishlist-div">
-                            <!-- <img src={{sellProduct.wishlist}} alt=""> -->
-                            <!-- <svg (click)="addWishProduct(sellProduct)"
-                                [ngClass]="sellProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22" height="20"
-                                viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                {{sellProduct.wishlist}}
-                            </svg> -->
                             <svg (click)="toggleSellWishlist(sellProduct)"
                                 [ngClass]="sellProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22" height="20"
                                 viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,25 +124,8 @@
                                     stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 {{sellProduct.wishlist}}
                             </svg>
-
-                            <!-- [ngClass]="sellProduct.wishlistSelected ? 'bgred' : 'bgwhite'" -->
-                            <!-- <svg [ngClass]="sellProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22" height="20"
-                                viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                
-                            </svg> -->
                         </div>
-
-
-                        <!-- else{
-                            <img src={{sellProduct.iswishList}} alt="">
-                        } -->
-                        <!-- <img src="Quick View.svg" alt=""> -->
                         <div class="quick-view-div">
-
-                            <!-- <img (click)="imageClickSell(sellProduct)" src={{sellProduct.productView}} alt=""> -->
                             <svg class="view" (click)="imageClick(sellProduct)" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -239,32 +139,24 @@
                         </div>
                     </div>
                 </div>
-                <!-- <img src="home  page/havit game pad.png" alt=""> -->
-                <img (click)="imageClickSell(sellProduct)" [ngClass]="{ 'cooler-img': $index === 2,  }"
-                    src={{sellProduct.image}} alt="">
+                <img (click)="imageClickSell(sellProduct)"
+                    [ngClass]="{'coat':$index===0,'bag':$index===1, 'cooler-img': $index === 2, 'book-shelf':$index===3 }"
+                    src={{sellProduct.image}} alt="pic">
                 <button (click)="addProduct(sellProduct)" class="add-cart">Add To Cart</button>
             </div>
             <div class="product-details">
-                <!-- <h3>HAVIT HV-G92 Gamepad</h3> -->
                 <h3>{{sellProduct.name}}</h3>
                 <div class="flex gap-[1rem] text-[.9rem]">
-
-                    <!-- <p>$120</p> -->
                     <p>&dollar;{{sellProduct.price}}</p>
-                    <!-- <p class="discount-price">$160</p> -->
                     <p class="discount-price">{{sellProduct.discountPrice}}</p>
                 </div>
                 <div class="flex gap-[.5rem]">
-                    <!-- <img src="Five star.svg" alt=""> -->
-                    <img src={{sellProduct.rating}} alt="">
-                    <!-- <p>(88)</p> -->
+                    <img class="w-[5.5rem]" src={{sellProduct.rating}} alt="pic">
                     <p>{{sellProduct.ratingNo}}</p>
                 </div>
             </div>
         </div>
         }
-
-
     </div>
 </section>
 <section class="head-band-banner">
@@ -272,37 +164,35 @@
         <div class="head-band-categories">
             <div class="head-band-categories-child">
                 <h4 class="head-categories">Categories</h4>
-                <h2>Enhance Your Music Experience</h2>
-                <div class="head-timers">
-                    <div class="head-hours">
-                        <p>23</p>
-                        <p>Hours</p>
+                <div class="flex flex-col gap-[2rem] max-[600px]:gap-[1rem]">
+                    <h2>Enhance Your Music Experience</h2>
+                    <div class="head-timers">
+                        <div class="head-hours">
+                            <p>23</p>
+                            <p>Hours</p>
+                        </div>
+                        <div class="head-days">
+                            <p>05</p>
+                            <p>Days</p>
+                        </div>
+                        <div class="head-minutes">
+                            <p>59</p>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="head-second">
+                            <p>35</p>
+                            <p>Seconds</p>
+                        </div>
                     </div>
-                    <div class="head-days">
-                        <p>05</p>
-                        <p>Days</p>
-                    </div>
-                    <div class="head-minutes">
-                        <p>59</p>
-                        <p>Minutes</p>
-                    </div>
-                    <div class="head-second">
-                        <p>35</p>
-                        <p>Seconds</p>
-                    </div>
+                    <button routerLink="/product-details">Buy Now!</button>
                 </div>
-                <button routerLink="/product-details">Buy Now!</button>
             </div>
         </div>
-        <img class="head-band-img" src="home  page/Frame 694.png" alt="">
-
+        <img class="head-band-img" src="home-page/Frame-694.png" alt="pic">
     </div>
-
-
-
 </section>
 <section class="flex flex-col gap-[3rem]">
-    <div class="flex flex-col gap-[1rem]">
+    <div class="flex flex-col gap-[.7rem]">
         <div class="flex gap-[1rem] items-center">
             <div class="flag"></div>
             <h3>Our Products</h3>
@@ -311,56 +201,26 @@
             <h2 class="productExplore">Explore Our Products</h2>
             <div class="flex items-center gap-[.5rem] cursor-pointer ">
                 <div class=" arrow-left hover:opacity-[.5]">
-
-                    <img src="home  page/icons_arrow-left.svg" alt="">
+                    <img src="home-page/icons_arrow-left.svg" alt="pic">
                 </div>
                 <div class="arrow-right hover:opacity-[.5]">
-
-                    <img src="home  page/slider right.svg" alt="">
+                    <img src="home-page/slider-right.svg" alt="pic">
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex flex-col gap-[2rem]">
+    <div class="flex flex-col gap-[3rem]">
         <div class="product-image-grid-2">
             @for (ExploreProduct of ExploreProducts ; track $index;) {
-
-
             <div class="product-image-details">
-
-
                 <div class="product-image">
                     <div class="flex justify-between">
-                        <!-- <p>-40&percnt;</p>
-                      -->
-
                         <p class="new-tag-2"
                             [ngClass]="{'new-tag':$index===5 ,'new-tag-index':$index===7,'index1':$index===0,'index2':$index===1,'index3':$index===2,'index4':$index===3}">
                             <span>{{ExploreProduct.new}}</span>
                         </p>
-
                         <div class="flex flex-col cursor-pointer items-center gap-[.2rem]">
-
-                            <!-- <img src="wishlist.svg" alt=""> -->
-                            <!-- <img [ngClass]="showColour?'bgRed':'bgWhite'" src={{ExploreProduct.wishlist}} alt=""> -->
-                            <!-- <svg [ngClass]="showColour?'bgRed':'bgWhite'" width="22" height="20" viewBox="0 0 22 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                                stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            {{ExploreProduct.wishlist}}
-                        </svg> -->
-                            <!-- (click)="addWish(ExploreProduct)" -->
                             <div class="wishlist-div">
-                                <!-- [ngClass]="ExploreProduct.wishlistSelected ? 'bgred' : 'bgwhite'" -->
-                                <!-- <svg (click)="addWishExplore(ExploreProduct)"
-                                    [ngClass]="ExploreProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
-                                    height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    {{ExploreProduct.wishlist}}
-                                </svg> -->
                                 <svg (click)="toggleExploreWishlist(ExploreProduct)"
                                     [ngClass]="ExploreProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
                                     height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,15 +230,7 @@
                                     {{ExploreProduct.wishlist}}
                                 </svg>
                             </div>
-
-
-                            <!-- else{
-                            <img src={{ExploreProduct.iswishList}} alt="">
-                        } -->
-                            <!-- <img src="Quick View.svg" alt=""> -->
                             <div class="quick-view-div">
-
-                                <!-- <img (click)="imageClick(ExploreProduct)" src={{ExploreProduct.productView}} alt=""> -->
                                 <svg class="view" (click)="imageClick(ExploreProduct)" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -389,56 +241,40 @@
                                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     src={{ExploreProduct.productView}}
                                 </svg>
-
                             </div>
                         </div>
                     </div>
-                    <!-- <img src="home  page/havit game pad.png" alt=""> -->
-                    <img (click)="imageClick(ExploreProduct)" [ngClass]="{ 'cooler-img': $index === 2,  }"
-                        src={{ExploreProduct.image}} alt="">
+                    <img (click)="imageClick(ExploreProduct)"
+                        [ngClass]="{ 'Explore-first-img': $index === 0,'Explore-camera':$index===1,'Explore-laptop':$index===2 ,'Explore-curology':$index===3,'Explore-car':$index===4,'Explore-cleats':$index===5,'Explore-Gp11-gamepad':$index===6,'Explore-quilted':$index===7 }"
+                        src={{ExploreProduct.image}} alt="pic">
                     <button (click)="addProductExplore(ExploreProduct)" class="add-cart">Add To Cart</button>
                 </div>
                 <div class="product-details">
-                    <!-- <h3>HAVIT HV-G92 Gamepad</h3> -->
                     <h3>{{ExploreProduct.name}}</h3>
                     <div class="flex">
-
                         <div class="flex gap-[1rem] text-[.9rem]">
-
-                            <!-- <p>$120</p> -->
                             <p>&dollar;{{ExploreProduct.price}}</p>
-                            <!-- <p class="discount-price">$160</p> -->
                             <p class="discount-price">{{ExploreProduct.discountPrice}}</p>
                         </div>
                         <div class="flex gap-[.5rem]">
-                            <!-- <img src="Five star.svg" alt=""> -->
-                            <img src={{ExploreProduct.rating}} alt="">
-                            <!-- <p>(88)</p> -->
+                            <img class="w-[5.5rem]" src={{ExploreProduct.rating}} alt="pic">
                             <p>{{ExploreProduct.ratingNo}}</p>
                         </div>
                     </div>
                     @if($index>3){
-
                     <div [ngClass] class="flex gap-[.5rem]  justify-start cursor-pointer">
                         <div class="flex items-center gap-[.5rem] ">
                             <div class="select-color-parent">
-
-
-
                                 <div [ngClass]="{'color-select':$index===5,'color-black':$index===6,'color-blue':$index===7}"
                                     class="select-color">
                                 </div>
                             </div>
                             <div class="select-color-parent">
-
                                 <div class="select-color-red"></div>
                             </div>
                         </div>
-
                     </div>
                     }
-
-
                 </div>
             </div>
             }
@@ -450,22 +286,20 @@
 </section>
 <section class="flex flex-col gap-[3rem]">
     <div class="flex flex-col gap-[1rem]">
-
-        <div class="flex gap-[1rem] items-center">
+        <div class="flex gap-[.5rem] items-center">
             <div class="flag"></div>
             <p class="featured">Featured</p>
         </div>
         <h2 class="new-arrival-head">New Arrival</h2>
-
     </div>
-
     <div class="new-arrival">
-        <div class="playstation"> <img src="home  page/playstation  5.png" alt="">
-            <div class="playstation-description flex flex-col gap-[1rem]">
+        <div class="playstation-new">
+            <div class="playstation-description-new">
                 <h4>PlayStation 5</h4>
                 <p>Black and White version of the PS5 <br> coming out on sale.</p>
                 <button>Shop Now</button>
             </div>
+            <img src="home-page/playstation-5.png" alt="pic">
         </div>
         <div class="womens-collection">
             <div class="womens-collection-description">
@@ -473,111 +307,35 @@
                 <p>Featured woman collections that <br>give you another vibe.</p>
                 <button>Shop Now</button>
             </div>
-            <img src="home  page/women-section background.png" alt="">
+            <img src="home-page/women-section-background.png" alt="pic">
         </div>
     </div>
-
-    <!-- <div class="flex flex-col gap-[2rem]">
-
-            <div class="womens-collection">
-                <div class="womens-collection-description">
-                    <h4>Women’s Collections</h4>
-                    <p>Featured woman collections that <br>give you another vibe.</p>
-                    <button>Shop Now</button>
-                </div>
-                <img src="home  page/women-section background.png" alt="">
-            </div>
-            <div class="speaker-perfume flex">
-                <div class="speakers"> <img src="home  page/speakers background.png" alt="">
-                    <div class="speakers-description flex flex-col gap-[1rem]">
-                        <h4>Speakers 5</h4>
-                        <p>Amazon wireless speakers.</p>
-                        <button>Shop Now</button>
-                    </div>
-                </div>
-                <div class="perfume"> <img src="home  page/perfume background.png" alt="">
-                    <div class="perfume-description flex flex-col gap-[1rem]">
-                        <h4>Perfume</h4>
-                        <p>GUCCI INTENSE OUD EDP</p>
-                        <button>Shop Now</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
 </section>
-<!-- //test -->
-<!-- <div class="new-arrival">
-    <div class="playstation"> <img src="home  page/playstation  5.png" alt="">
-        <div class="playstation-description flex flex-col gap-[1rem]">
-            <h4>PlayStation 5</h4>
-            <p>Black and White version of the PS5 <br> coming out on sale.</p>
-            <button>Shop Now</button>
-        </div>
-    </div>
-    <div class="flex flex-col">
-
-        <div class="womens-collection">
-            <div class="womens-sollection-description">
-                <h4>Women’s Collections</h4>
-                <p>Featured woman collections that give you another vibe.</p>
-                <button>Shop Now</button>
-            </div>
-            <img src="home  page/women-section-bg.png" alt="">
-        </div>
-        <div class="speaker-perfume flex">
-            <div class="speakers"> <img src="home  page/speakers background.png" alt="">
-                <div class="speakers-description flex flex-col gap-[1rem]">
-                    <h4>Speakers 5</h4>
-                    <p>Amazon wireless speakers.</p>
-                    <button>Shop Now</button>
-                </div>
-            </div>
-            <div class="perfume"> <img src="home  page/perfume background.png" alt="">
-                <div class="perfume-description flex flex-col gap-[1rem]">
-                    <h4>Perfume</h4>
-                    <p>GUCCI INTENSE OUD EDP</p>
-                    <button>Shop Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div> -->
-<!-- <img src="slider-banner1.png" alt=""> -->
-
 <section class="service-section pt-[3rem] pb-[4rem]">
     <div class="service ">
         <div class=" flex flex-col gap-[1rem] items-center ">
-
-            <img class="delivery-service w-[4rem]" src="Services-group.svg" alt="">
+            <img class="delivery-service w-[4rem]" src="Services-group.svg" alt="pic">
             <div class="flex flex-col gap-[.1rem]">
                 <h2 class="free-delivery font-bold">FREE AND FAST DELIVERY</h2>
                 <p class="text-[.8rem]">Free delivery for all orders over $140</p>
             </div>
         </div>
-        <!-- <div class="flex flex-col gap-[.5rem]"> -->
         <div class="flex flex-col gap-[1rem] items-center ">
-
-            <img class="customer-service w-[4rem]" src="customer-Services-group.svg" alt="">
+            <img class="customer-service w-[4rem]" src="customer-Services-group.svg" alt="pic">
             <div class="flex flex-col gap-[.1rem]">
                 <h2 class="font-bold">24/7 CUSTOMER SERVICE</h2>
                 <p class="text-[.8rem]">Friendly 24/7 customer support</p>
             </div>
         </div>
         <div class="flex flex-col gap-[1rem] items-center ">
-
-            <img class="money-back-service w-[4rem]" src="money-back-Services.svg" alt="">
+            <img class="money-back-service w-[4rem]" src="money-back-Services.svg" alt="pic">
             <div class="flex flex-col gap-[.1rem]">
                 <h2 class="font-bold">MONEY BACK GUARANTEE</h2>
                 <p class="text-[.8rem]">We return money within 30 days</p>
             </div>
         </div>
-        <!-- </div> -->
-
     </div>
     <button class="gototop" type="button" fragment="categoriesid" routerLink="/home">
-        <img fragment="categoriesid" routerLink="/home" src="Fill with Up Arrow.svg" alt="">
-
+        <img fragment="categoriesid" routerLink="/home" src="Fill-with-Up-Arrow.svg" alt="pic">
     </button>
 </section>

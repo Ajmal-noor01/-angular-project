@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
-  imports: [ProductComponent, CommonModule],
+  imports: [CommonModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
@@ -75,12 +75,12 @@ export class ProductDetailsComponent {
       id: 18,
       discount: "-40% ",
       wishlists: "wishlist.svg",
-      productView: "Quick View.svg",
-      image: "home  page/havit game pad.png",
+      productView: "Quick-View.svg",
+      image: "home-page/havit-game-pad.png",
       name: "HAVIT HV-G92 Gamepad",
       price: 120,
       discountPrice: "$160",
-      rating: "Five star.svg",
+      rating: "Five-star.svg",
       ratingNo: "(88)",
       wishlistSelected: false
 
@@ -89,12 +89,12 @@ export class ProductDetailsComponent {
       id: 19,
       discount: "-35%",
       wishlists: "wishlist.svg",
-      productView: "Quick View.svg",
-      image: "home  page/ak 900 keyboard.png",
+      productView: "Quick-View.svg",
+      image: "home-page/ak-900-keyboard.png",
       name: "AK-900 Wired Keyboard",
       price: 960,
       discountPrice: "$1160",
-      rating: "Five star.svg",
+      rating: "Five-star.svg",
       ratingNo: "(75)",
       wishlistSelected: false
 
@@ -103,12 +103,12 @@ export class ProductDetailsComponent {
       id: 20,
       discount: "-30% ",
       wishlists: "wishlist.svg",
-      productView: "Quick View.svg",
-      image: "home  page/ips lcg gaming.png",
+      productView: "Quick-View.svg",
+      image: "home-page/ips-lcg-gaming.png",
       name: "IPS LCD Gaming Monitor",
       price: 370,
       discountPrice: "$400",
-      rating: "Five star.svg",
+      rating: "Five-star.svg",
       ratingNo: "(99)",
       wishlistSelected: false
 
@@ -117,12 +117,12 @@ export class ProductDetailsComponent {
       discount: "",
       wishlists: "wishlist.svg",
       wishListTrue: "red-heart.svg",
-      productView: "Quick View.svg",
-      image: "home  page/rgb liquid cpu cooler.png",
+      productView: "Quick-View.svg",
+      image: "home-page/rgb-liquid-cpu-cooler.png",
       name: "RGB liquid CPU Cooler",
       price: 160,
       discountPrice: "$170",
-      rating: "Five star.svg",
+      rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
 

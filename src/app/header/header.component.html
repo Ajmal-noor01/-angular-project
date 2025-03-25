@@ -8,25 +8,11 @@
 
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- <div class="flex justify-center bg-black text-white py-[.4rem] relative">
-
-    <div class="flex justify-center ">
-        <p class="text-xs">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-        <p class="text-xs">ShopNow</p>
-    </div>
-    <div class="flex absolute right-[5rem]">
-        <p class="text-xs">English</p>
-        <img src="down arrow.svg" alt="pic">
-    </div>
-</div> -->
-<nav class="flex justify-between mx-[5rem] py-[2.4rem] items-center max-[978px]:mx-[2rem] max-[600px]:mx-[1rem]">
-    <img src="Exclusive logo.svg" alt="pic">
+<nav class="nav flex justify-between mx-[5rem] py-[2.4rem] items-center max-[978px]:mx-[2rem] max-[600px]:mx-[1rem]">
+    <img src="Exclusive-logo.svg" alt="pic">
     <input type="checkbox" id="check">
     <div class="links">
         <label for="check" class="check-label"><i class="fa-solid fa-close"></i></label>
-
-
         <ul class="">
             <li routerLink="">Home</li>
             <li routerLink="footer">Contact</li>
@@ -37,58 +23,50 @@
             <li>User profile</li>
         </ul>
     </div>
-    <div
-        class="flex border-[1px] gap-[1rem] px-[1rem] text-[.9rem] bg-[rgb(245,245,245)] py-[.2rem] border-none rounded-[.3rem] max-[830px]:hidden  ">
-
-        <input class="outline-none bg-[rgb(245,245,245)]" type="text" placeholder="What are you looking for? ">
-        <img class="header-input-img" src="search.svg" alt="">
-    </div>
-    <div class="user-cart">
-        <input type="checkbox" id="search-input">
-        <label for="search-input" class="search-input-label"><img src="search.svg" alt=""></label>
-        <div class="search-bar ">
-            <input type="text" placeholder="What are you looking for?">
+    <div class="cart-search">
+        <div
+            class="input-parent  flex border-[1px] gap-[1rem] px-[1rem] text-[.9rem] bg-[rgb(245,245,245)] py-[.2rem] border-none rounded-[.3rem] max-[830px]:hidden  ">
+            <input class="outline-none bg-[rgb(245,245,245)]" type="text" placeholder="What are you looking for? ">
+            <img class="header-input-img" src="search.svg" alt="">
         </div>
-        <div class="wishlist-counter">
-
-            <!-- <img src="wishlist.svg" alt="pic"> -->
-            <svg class="cart" width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
-                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <!-- <p class="cart-count">{{usersService.wishListCount()}}</p> -->
-            <p class="cart-count">
-                {{usersService.wishListExploreCount()+usersService.wishListSellCount()+usersService.wishListProductsCount()+
-                usersService.wishListDetailsCount()}}
-            </p>
-
-
+        <div class="user-cart">
+            <input type="checkbox" id="search-input">
+            <label for="search-input" class="search-input-label"><img src="search.svg" alt=""></label>
+            <div class="search-bar ">
+                <input type="text" placeholder="What are you looking for?">
+            </div>
+            <div class="wishlist-counter">
+                <svg class="cart" width="22" height="20" viewBox="0 0 22 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6 1C3.239 1 1 3.23669 1 5.99621C1 8.22381 1.875 13.5107 10.488 18.8551C10.6423 18.9499 10.8194 19 11 19C11.1806 19 11.3577 18.9499 11.512 18.8551C20.125 13.5107 21 8.22381 21 5.99621C21 3.23669 18.761 1 16 1C13.239 1 11 4.028 11 4.028C11 4.028 8.761 1 6 1Z"
+                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="cart-count">
+                    {{usersService.wishListExploreCount()+usersService.wishListSellCount()+usersService.wishListProductsCount()+
+                    usersService.wishListDetailsCount()}}
+                </p>
+            </div>
+            <div class="cart-counter">
+                <svg routerLink="products-cart" (click)="gotoProductCart()" class="cart" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.25 20.25C8.66421 20.25 9 19.9142 9 19.5C9 19.0858 8.66421 18.75 8.25 18.75C7.83579 18.75 7.5 19.0858 7.5 19.5C7.5 19.9142 7.83579 20.25 8.25 20.25Z"
+                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M18.75 20.25C19.1642 20.25 19.5 19.9142 19.5 19.5C19.5 19.0858 19.1642 18.75 18.75 18.75C18.3358 18.75 18 19.0858 18 19.5C18 19.9142 18.3358 20.25 18.75 20.25Z"
+                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.25 3.75H5.25L7.5 16.5H19.5" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M7.5 12.5H19.1925C19.2792 12.5001 19.3633 12.4701 19.4304 12.4151C19.4975 12.3601 19.5434 12.2836 19.5605 12.1986L20.9105 5.44859C20.9214 5.39417 20.92 5.338 20.9066 5.28414C20.8931 5.23029 20.8679 5.18009 20.8327 5.13717C20.7975 5.09426 20.7532 5.05969 20.703 5.03597C20.6528 5.01225 20.598 4.99996 20.5425 5H6"
+                        stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="cart-count">{{usersService.cartItemsCount()}}</p>
+            </div>
+            <img routerLink="sign-up" src="user.svg" alt="">
         </div>
-        <!-- <img class="cart" src="Cart1.svg" alt=""> -->
-        <div class="cart-counter">
-
-            <svg routerLink="products-cart" (click)="gotoProductCart()" class="cart" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M8.25 20.25C8.66421 20.25 9 19.9142 9 19.5C9 19.0858 8.66421 18.75 8.25 18.75C7.83579 18.75 7.5 19.0858 7.5 19.5C7.5 19.9142 7.83579 20.25 8.25 20.25Z"
-                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M18.75 20.25C19.1642 20.25 19.5 19.9142 19.5 19.5C19.5 19.0858 19.1642 18.75 18.75 18.75C18.3358 18.75 18 19.0858 18 19.5C18 19.9142 18.3358 20.25 18.75 20.25Z"
-                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M2.25 3.75H5.25L7.5 16.5H19.5" stroke="black" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path
-                    d="M7.5 12.5H19.1925C19.2792 12.5001 19.3633 12.4701 19.4304 12.4151C19.4975 12.3601 19.5434 12.2836 19.5605 12.1986L20.9105 5.44859C20.9214 5.39417 20.92 5.338 20.9066 5.28414C20.8931 5.23029 20.8679 5.18009 20.8327 5.13717C20.7975 5.09426 20.7532 5.05969 20.703 5.03597C20.6528 5.01225 20.598 4.99996 20.5425 5H6"
-                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-
-            </svg>
-            <p class="cart-count">{{usersService.cartItemsCount()}}</p>
-        </div>
-
-        <img routerLink="sign-up" src="user.svg" alt="">
     </div>
     <label for="check" class="check-label"><i class="fa-solid fa-bars"></i></label>
-    <!-- <label for="check" class="check-label"><i class="fa-solid fa-close"></i></label> -->
 </nav>
 <hr>
