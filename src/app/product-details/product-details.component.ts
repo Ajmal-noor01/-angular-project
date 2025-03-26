@@ -109,6 +109,7 @@ export class ProductDetailsComponent {
     cartProducts.push(productDetail);
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
+    alert("your cart has been added successfully")
     return cartProducts
   }
   addWishDetail(productDetail: any) {
