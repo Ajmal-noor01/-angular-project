@@ -28,16 +28,18 @@
                         <td>
                             <div class="counter flex">
                                 <p>{{productCart.quantity}}</p>
-                                <div class="counter-symbol flex flex-col">
-                                    <button><img (click)="increaseCartNumber(productCart.id)" class="counter-up"
-                                            src="counter-up-arrow.svg" alt=""></button>
-                                    <button><img (click)="decreaseCartNumber(productCart.id)" class="counter-down"
-                                            src="counter-down-arrow.svg" alt=""></button>
+                                <div class="counter-symbol flex flex-col cursor-pointer">
+                                    <button><img (click)="increaseCartNumber(productCart.id)"
+                                            class="counter-up cursor-pointer" src="counter-up-arrow.svg"
+                                            alt=""></button>
+                                    <button><img (click)="decreaseCartNumber(productCart.id)"
+                                            class="counter-down cursor-pointer" src="counter-down-arrow.svg"
+                                            alt=""></button>
                                 </div>
                             </div>
                         </td>
                         <td class="subtotal">{{ productCart.subtotal |currency : 'USD':'symbol':'1.0-0'}}</td>
-                        <td><button (click)="removeFromCart(productCart.id)">remove</button></td>
+                        <td><button class="cursor-pointer" (click)="removeFromCart(productCart.id)">remove</button></td>
                     </tr>
                     }
                 </table>
