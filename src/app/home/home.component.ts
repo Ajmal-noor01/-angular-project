@@ -27,7 +27,6 @@ export class HomeComponent {
   wishlistSelected: boolean = false
   router: Router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
-
   ngOnInit() {
     this.usersService.updateCartCount();
     let wishList = JSON.parse(localStorage.getItem("wishListExplore") || "[]");
@@ -143,7 +142,6 @@ export class HomeComponent {
       ratingNo: "(65)",
       wishlistSelected: false
     },
-
   ]
   ExploreProducts: any[] = [
     {
@@ -262,7 +260,6 @@ export class HomeComponent {
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
     return cartProducts
-
   }
   addProduct(sellProduct: any) {
     let sellcartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
@@ -270,13 +267,10 @@ export class HomeComponent {
       sellcartProducts = [];
     }
     sellcartProducts.push(sellProduct);
-
     localStorage.setItem("cartProducts", JSON.stringify(sellcartProducts));
-
     this.usersService.cartItemsCount.update(old => old + 1);
     alert("Your Cart has been been  added Successfully")
     return sellcartProducts
-
   }
   addProductExplore(ExploreProduct: any) {
     let cartProductsExplore = JSON.parse(localStorage.getItem("cartProducts") || "[]");
