@@ -4,7 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .slides {
@@ -38,3 +38,5 @@
 .active {
     background-color: red;
 }
+
+// @media(max-width:)

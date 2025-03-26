@@ -44,7 +44,6 @@ export class ProductComponent {
   }
 
   products: any[] = [
-
     {
       id: 1,
       discount: "-40% ",
@@ -57,7 +56,6 @@ export class ProductComponent {
       rating: "Five-star.svg",
       ratingNo: "(88)",
       wishlistSelected: false
-
     },
     {
       id: 2,
@@ -71,7 +69,6 @@ export class ProductComponent {
       rating: "Five-star.svg",
       ratingNo: "(75)",
       wishlistSelected: false
-
     },
     {
       id: 3,
@@ -85,7 +82,6 @@ export class ProductComponent {
       rating: "Five-star.svg",
       ratingNo: "(99)",
       wishlistSelected: false
-
     },
     {
       id: 4,
@@ -99,7 +95,6 @@ export class ProductComponent {
       rating: "Five-star.svg",
       ratingNo: "(99)",
       wishlistSelected: false
-
     },
     {
       id: 5,
@@ -114,59 +109,37 @@ export class ProductComponent {
       rating: "Five-star.svg",
       ratingNo: "(99)",
       wishlistSelected: false
-
     },
-
-
   ]
 
   addItem(product: any) {
-
-    // localStorage.setItem("cartProducts", JSON.stringify(product))
     let cartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
     if (!Array.isArray(cartProducts)) {
       cartProducts = [];
     }
     cartProducts.push(product);
-
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-
     this.usersService.cartItemsCount.update(old => old + 1);
     alert("your Cart has  been added succesfully")
-
   }
-
-
   addWish(product: any) {
     this.isWishList = true
     this.showColour = true
-    //previous worked code
     product.wishlistSelected = !product.wishlistSelected;
     let wishList = JSON.parse(localStorage.getItem("wishListProducts") || "[]");
-
     if (!Array.isArray(wishList)) {
       wishList = [];
     }
-
     if (product.wishlistSelected) {
       wishList.push(product);
-      // this.usersService.wishListCount.update(old => old + 1);
     } else {
       wishList = wishList.filter((product: any) => product.id !== product.id);
-      // this.usersService.wishListCount.update(old => (old > 0 ? old - 1 : 0));
     }
-
     localStorage.setItem("wishListProducts", JSON.stringify(wishList));
-    //previous worked code end
-
-
-
-
   }
   toggleProductWishlist(product: any) {
     product.wishlistSelected = !product.wishlistSelected;
     this.usersService.toggleWishlistItem('wishListProducts', product, this.usersService.wishListProductsCount);
-
   }
 
   imageClickProduct(product: any) {
@@ -175,5 +148,6 @@ export class ProductComponent {
     console.log(detailProduct);
     localStorage.setItem('cartProducts', JSON.stringify(detailProduct));
     this.router.navigate(['/product-details']);
+    return detailProduct
   }
 }

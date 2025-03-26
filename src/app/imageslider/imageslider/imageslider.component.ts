@@ -16,8 +16,6 @@ export class ImagesliderComponent {
   slideWidth = 100;
   hidden = false
   ngOnInit() {
-    console.log("Slides array: ", this.slides);
-    console.log("Current Slide: ", this.slides[this.currentSlide]);
   }
   next() {
     this.currentSlide = (this.currentSlide + 1) % this.slides.length;
@@ -30,10 +28,8 @@ export class ImagesliderComponent {
   jumpToSlide(index: number) {
     this.hidden = true;
     setTimeout(() => {
-
       this.currentSlide = index;
       this.hidden = false
-
     }, 500)
   }
   constructor() {
@@ -43,5 +39,4 @@ export class ImagesliderComponent {
       }, 3000)
     }
   }
-
 }

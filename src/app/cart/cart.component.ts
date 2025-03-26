@@ -27,8 +27,6 @@ export class CartComponent {
       };
     });
   }
-
-
   calculateTotalPrice() {
     this.totalPrice = this.productCarts.reduce((sum, item) => sum + item.subtotal, 0); //item.price
   }
@@ -44,8 +42,6 @@ export class CartComponent {
         ? { ...product, quantity: product.quantity + 1, subtotal: Number(product.price) * (product.quantity + 1) }
         : product
     );
-
-
     this.updateCartStorage();
     return this.productCarts.map(p => p.id)
   }
@@ -56,19 +52,16 @@ export class CartComponent {
         ? { ...product, quantity: product.quantity - 1, subtotal: Number(product.price) * (product.quantity - 1) }
         : product
     );
-
     this.updateCartStorage();
+    return this.productCarts
   }
   removeFromCart(productId: number) {
     this.productCarts = this.productCarts.filter(product => product.id !== productId);
     this.updateCartStorage();
     this.getTotalPrice()
+    return this.productCarts
   }
   updateCartStorage() {
     localStorage.setItem("cartProducts", JSON.stringify(this.productCarts));
   }
-
-
-
-
 }

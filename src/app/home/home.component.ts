@@ -29,7 +29,6 @@ export class HomeComponent {
   activatedRoute = inject(ActivatedRoute)
 
   ngOnInit() {
-
     this.usersService.updateCartCount();
     let wishList = JSON.parse(localStorage.getItem("wishListExplore") || "[]");
     if (!Array.isArray(wishList)) {
@@ -39,22 +38,18 @@ export class HomeComponent {
       product.wishlistSelected = wishList.some((wishItem: any) => wishItem.id === product.id);
     });
     let wishListSell = JSON.parse(localStorage.getItem("wishListSell") || "[]");
-
     if (!Array.isArray(wishListSell)) {
       wishListSell = [];
     }
     this.sellProducts.forEach(product => {
       product.wishlistSelected = wishListSell.some((wishItem: any) => wishItem.id === product.id);
     });
-
     this.activatedRoute.fragment.subscribe({
       next: (value: any) => {
         document.getElementById(value)?.scrollIntoView({ behavior: 'smooth' })
         return document.getElementById(value)?.scrollIntoView({ behavior: 'smooth' })
       }
     })
-
-
   }
   ngAfterViewInit(): void {
     this.activatedRoute.fragment.subscribe({
@@ -105,7 +100,6 @@ export class HomeComponent {
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
     {
       id: 7,
@@ -120,7 +114,6 @@ export class HomeComponent {
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
     {
       id: 8,
@@ -135,7 +128,6 @@ export class HomeComponent {
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
     {
       id: 9,
@@ -150,7 +142,6 @@ export class HomeComponent {
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
 
   ]
@@ -164,11 +155,9 @@ export class HomeComponent {
       image: "home-page/cesar-breed-dog-food.png",
       name: "Breed Dry Dog Food",
       price: 100,
-      // newPrice: "$360",
       rating: "Five-star.svg",
       ratingNo: "(35)",
       wishlistSelected: false
-
     },
     {
       id: 11,
@@ -179,11 +168,9 @@ export class HomeComponent {
       image: "home-page/canon-dslr-camera.png",
       name: "CANON EOS DSLR Camera",
       price: 360,
-      // newPrice: "$1160",
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
     {
       id: 12,
@@ -194,11 +181,9 @@ export class HomeComponent {
       image: "home-page/asus-fhd-gaming-laptop.png",
       name: "ASUS FHD Gaming Laptop",
       price: 700,
-      // newPrice: "$170",
       rating: "Five-star.svg",
       ratingNo: "(325)",
       wishlistSelected: false
-
     },
     {
       id: 13,
@@ -209,11 +194,9 @@ export class HomeComponent {
       image: "home-page/curology-product-set.png",
       name: "Curology Product Set",
       price: 500,
-      // newPrice: "$400",
       rating: "Five-star.svg",
       ratingNo: "(145)",
       wishlistSelected: false
-
     },
     {
       id: 14,
@@ -224,11 +207,9 @@ export class HomeComponent {
       image: "home-page/kid-electric-car.png",
       name: "Kids Electric Car",
       price: 960,
-      // newPrice: "$400",
       rating: "Five-star.svg",
       ratingNo: "(65)",
       wishlistSelected: false
-
     },
     {
       id: 15,
@@ -239,11 +220,9 @@ export class HomeComponent {
       image: "home-page/jr-zoom-soccer-cleat.png",
       name: "Jr. Zoom Soccer Cleats",
       price: 1160,
-      // newPrice: "$400",
       rating: "Five-star.svg",
       ratingNo: "(35)",
       wishlistSelected: false
-
     },
     {
       id: 16,
@@ -254,11 +233,9 @@ export class HomeComponent {
       image: "home-page/gp11-Shooter-usb-gaming.png",
       name: "GP11 Shooter USB Gamepad",
       price: 660,
-      // newPrice: "$400",
       rating: "Five-star.svg",
       ratingNo: "(55)",
       wishlistSelected: false
-
     },
     {
       id: 17,
@@ -269,35 +246,25 @@ export class HomeComponent {
       image: "home-page/quilted-satin-jacket.png",
       name: "Quilted Satin Jacket",
       price: 660,
-      // newPrice: "$400",
       rating: "Five-star.svg",
       ratingNo: "(55)",
       wishlistSelected: false
-
     },
-
   ]
-
   firstSetStart = 0
   firSetSetEnd = 3
   addItem(product: any) {
-
-
-    // localStorage.setItem("cartProducts", JSON.stringify(product))
     let cartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
     if (!Array.isArray(cartProducts)) {
       cartProducts = [];
     }
     cartProducts.push(product);
-
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-
     this.usersService.cartItemsCount.update(old => old + 1);
+    return cartProducts
 
   }
   addProduct(sellProduct: any) {
-
-
     let sellcartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
     if (!Array.isArray(sellcartProducts)) {
       sellcartProducts = [];
@@ -308,6 +275,7 @@ export class HomeComponent {
 
     this.usersService.cartItemsCount.update(old => old + 1);
     alert("Your Cart has been been  added Successfully")
+    return sellcartProducts
 
   }
   addProductExplore(ExploreProduct: any) {
@@ -319,6 +287,7 @@ export class HomeComponent {
     localStorage.setItem("cartProducts", JSON.stringify(cartProductsExplore));
     this.usersService.cartItemsCount.update(old => old + 1);
     alert("Your Cart has been been  added Successfully")
+    return cartProductsExplore
   }
   addWish(product: any) {
     product.wishlistSelected = !product.wishlistSelected;
@@ -337,6 +306,7 @@ export class HomeComponent {
       wishList = wishList.filter((product: any) => product.id !== sellProduct.id);
     }
     localStorage.setItem("wishListSell", JSON.stringify(wishList));
+    return wishList
   }
 
   addWishExplore(ExploreProduct: any) {
@@ -351,6 +321,7 @@ export class HomeComponent {
       wishList = wishList.filter((product: any) => product.id !== ExploreProduct.id);
     }
     localStorage.setItem("wishListExplore", JSON.stringify(wishList));
+    return wishList
   }
   toggleExploreWishlist(product: any) {
     product.wishlistSelected = !product.wishlistSelected;
@@ -366,12 +337,14 @@ export class HomeComponent {
     detailProductExplore.push(ExploreProduct)
     localStorage.setItem('cartProducts', JSON.stringify(detailProductExplore));
     this.router.navigate(['product-details']);
+    return detailProductExplore
   }
   imageClickSell(sellProduct: any) {
     let detailSellProduct = JSON.parse(localStorage.getItem('cartProducts') || '[]')
     detailSellProduct.push(sellProduct)
     localStorage.setItem('cartProducts', JSON.stringify(detailSellProduct));
     this.router.navigate(['product-details']);
+    return detailSellProduct
   }
   slides: any[] = [
     {
@@ -381,6 +354,5 @@ export class HomeComponent {
       image: "ecommerce-banner.jpg"
     }
   ]
-
 }
 

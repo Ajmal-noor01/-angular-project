@@ -132,9 +132,10 @@
                                 </div>
                             </div>
                         </div>
-                        <img (click)="imageClick(productDetail)" [ngClass]="{ 'cooler-img': $index === 2,  }"
-                            src={{productDetail.image}} alt="pic">
-                        <button (click)="addItemDetail(productDetail)" class="add-cart">Add To Cart</button>
+                        <img class="cursor-pointer" (click)="imageClick(productDetail)"
+                            [ngClass]="{ 'cooler-img': $index === 2,  }" src={{productDetail.image}} alt="pic">
+                        <button (click)="addItemDetail(productDetail)" class="add-cart cursor-pointer">Add To
+                            Cart</button>
                     </div>
                     <div class="product-details">
                         <h3>{{productDetail.name}}</h3>

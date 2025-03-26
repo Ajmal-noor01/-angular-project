@@ -11,15 +11,10 @@ import { ProductComponent } from '../product/product.component';
 })
 export class HeaderComponent {
   usersService: EcommerceServicesService = inject(EcommerceServicesService)
-
   countEffect = effect(() => {
     if (this.usersService.cartItemsCount() > 0) {
-
     }
   })
-  gotoProductCart() {
-
-
-  }
+  // gotoProductCart() {  }
 
 }
