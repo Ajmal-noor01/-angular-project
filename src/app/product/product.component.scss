@@ -144,6 +144,16 @@
     fill: white;
 }
 
+.bgWhite {
+    stroke: black;
+    width: 1rem;
+}
+
+.bgWhite:hover {
+    stroke: white;
+    fill: white;
+}
+
 .quick-view-div {
     border: 1px solid;
     padding: 0.1rem 0.3rem;
