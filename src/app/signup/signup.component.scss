@@ -7,6 +7,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     padding: 3rem 0 4rem;
+    justify-content: space-between;
 }
 
 .signup-form h4 {
@@ -19,11 +20,16 @@ button {
 }
 
 .create-form {
-    max-width: 20rem;
+    // max-width: 20rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-block: 3rem;
+    margin-inline: auto;
+    padding-right: 4rem !important;
+    max-width: 29rem;
+    width: 100%;
+    align-self: center;
 }
 
 .create-form-input {
@@ -50,6 +56,8 @@ form {
 .create-form-input input {
     padding-inline: 0;
     padding-bottom: .5rem;
+    outline: none;
+
 }
 
 .create-account {
@@ -111,16 +119,19 @@ form {
         margin-inline: auto;
     }
 
-    .create-form {
-        margin-inline: auto;
-        align-items: center;
-    }
+    // .create-form {
+    //     margin-inline: auto;
+    //     align-items: center;
+    // }
 
     .create-form {
         margin-inline: auto;
         max-width: 30rem;
         width: 100%;
         padding-block: 1rem;
+        padding-right: 0rem !important;
+        align-items: center;
+
     }
 
     .create-form-input {
@@ -172,6 +183,7 @@ form {
 
     .create-form {
         padding-inline: 1rem;
+        padding-right: 1rem !important;
         max-width: 30rem;
         width: 100%;
     }

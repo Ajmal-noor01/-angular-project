@@ -6,12 +6,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <main>
     <section class="detail-section">
-        <div class="flex gap-[.5rem] breadcrums">
-            <p>Home</p>
-            <p>/</p>
-            <p>Flash Sales</p>
-            <p>/</p>
-            <p>Havic HV G-92 Gamepad</p>
+        <div class="flex flex-col gap-[2rem]">
+            <div class="flex gap-[.5rem] breadcrums">
+                <p>Home</p>
+                <p>/</p>
+                <p>Flash Sales</p>
+                <p>/</p>
+                <p>Havic HV G-92 Gamepad</p>
+            </div>
+            <button class="return-home" (click)="returnHome()">Back</button>
         </div>
         <div class="product-details-img">
             @for(productList of productLists;track $index;){
@@ -62,7 +65,7 @@
                 <div class="cart-quantity">
                     <div class="quantity">
                         <button (click)="decreaseNumber()">-</button>
-                        <p>{{productList.quantity}}</p>
+                        <p>{{productList.quantity || 1}}</p>
                         <button class="increment" (click)="increaseNumber()">+</button>
                     </div>
                     <button class="product-add-cart" (click)="gotoCart()">Add To Cart</button>
@@ -107,7 +110,7 @@
                             <p class="discount-tag-2" [ngClass]="{'no-discount':$index===3}">
                                 <span>{{productDetail.discount}}</span>
                             </p>
-                            <div class="flex flex-col items-center gap-[.2rem]">
+                            <div class="flex flex-col items-center gap-[.5rem]">
                                 <div class="wishlist-div">
                                     <svg (click)="toggleDetailWishlist(productDetail)"
                                         [ngClass]="productDetail.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
@@ -133,7 +136,8 @@
                             </div>
                         </div>
                         <img class="cursor-pointer" (click)="imageClick(productDetail)"
-                            [ngClass]="{ 'cooler-img': $index === 2,  }" src={{productDetail.image}} alt="pic">
+                            [ngClass]="{ 'gamepad':$index==0,'keyboard-details':$index===1, 'tv-details':$index===2, 'cooler-img': $index === 3,  }"
+                            src={{productDetail.image}} alt="pic">
                         <button (click)="addItemDetail(productDetail)" class="add-cart cursor-pointer">Add To
                             Cart</button>
                     </div>

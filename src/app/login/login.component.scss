@@ -7,6 +7,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     padding: 3rem 0 4rem;
+    justify-content: space-between;
 }
 
 .login-form-section>img {
@@ -14,8 +15,14 @@ button {
 }
 
 .login-form {
-    max-width: 20rem;
-    padding-block: 4rem
+    // max-width: 20rem;
+    padding-block: 4rem;
+    align-self: center;
+    // max-width: 23rem;
+    margin-inline: auto;
+    padding-right: 4rem;
+    max-width: 25rem;
+    width: 100%;
 }
 
 .login-form-input {
@@ -36,11 +43,13 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    font-size: .9rem;
 }
 
 form input {
     border-bottom: 1px solid black;
     padding-bottom: .6rem;
+    outline: none;
 }
 
 form input~div {
@@ -64,13 +73,15 @@ form input~div button:nth-child(1) {
 }
 
 .login {
-    max-width: 7rem;
+    // max-width: 7rem;
     width: 100%;
-    padding-block: .3rem;
+    // padding-block: .3rem;
     border-radius: 0.2rem;
     background: rgba(219, 68, 68, 1);
     color: white;
     border: none;
+    padding-block: 0.7rem;
+    max-width: 8rem;
 }
 
 form input~div button:nth-child(2) {
@@ -99,6 +110,9 @@ form input~div button:nth-child(2) {
         max-width: 30rem;
         width: 100%;
         padding-block: 2rem;
+        padding-right: 0;
+
+
     }
 
     .login-form-input {

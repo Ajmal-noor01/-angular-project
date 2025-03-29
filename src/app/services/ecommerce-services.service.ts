@@ -10,7 +10,6 @@ export class EcommerceServicesService {
   wishListProductsCount = signal(this.loadWishListCount('wishListProducts'));
   wishListDetailsCount = signal(this.loadWishListCount('wishListDetail'))
   constructor() { }
-
   private loadCartCount(): number {
     return JSON.parse(localStorage.getItem('cartCount') || '0');
   }

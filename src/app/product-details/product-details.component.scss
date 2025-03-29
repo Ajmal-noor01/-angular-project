@@ -14,6 +14,23 @@
     font-size: .9rem;
 }
 
+.return-home {
+    border: 1px solid;
+    max-width: 10rem;
+    width: 100%;
+    border-radius: 0.2rem;
+    padding-block: 0.4rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-block: 0.8rem;
+}
+
+.return-home:hover {
+    background-color: rgba(219, 68, 68, 1);
+    color: white;
+}
+
 .star-review {
     display: flex;
     gap: .5rem;
@@ -304,7 +321,6 @@
     padding-bottom: 4rem;
 }
 
-
 section {
     padding-inline: 4rem;
     max-width: 1300px;
@@ -320,9 +336,6 @@ section {
 .related-item {
     color: rgba(219, 68, 68, 1);
 }
-
-
-
 
 .image {
     fill: black;
@@ -368,7 +381,6 @@ section {
 .product-image>img {
     width: 8rem;
     align-self: center;
-    margin-block: auto;
 }
 
 .product-image-grid-2 {
@@ -380,7 +392,6 @@ section {
 .view {
     stroke: black;
     width: 1.3rem;
-
 }
 
 .view:hover {
@@ -429,6 +440,10 @@ section {
     left: 0px;
     display: none;
     transition: all 1s linear;
+    padding-block: 0.4rem;
+    border-bottom-left-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    font-size: .9rem;
 }
 
 .product-details {
@@ -448,9 +463,6 @@ section {
     color: red;
     font-weight: 500;
 }
-
-
-
 
 .discount-tag-2 {
     width: 3rem;
@@ -483,8 +495,6 @@ section {
     text-decoration-color: #000000b0 !important;
 }
 
-
-
 .bgred {
     fill: red;
     width: 1rem;
@@ -505,7 +515,26 @@ section {
     height: 100%;
 }
 
+.keyboard-details {
+    width: 10rem !important;
+    margin-block: 0 !important;
+    margin-top: -1rem !important;
+}
 
+.cooler-img {
+    margin-block: 0 !important;
+    width: 10rem !important;
+}
+
+.tv-details {
+    margin-block: 0 !important;
+    width: 9rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.gamepad {
+    margin-top: -1rem !important;
+}
 
 @media(max-width:978px) {
     .product-image-grid-2 {
@@ -514,22 +543,16 @@ section {
         gap: 1rem;
     }
 
-
-
     section {
         padding-inline: 2rem;
     }
-
 }
 
 @media((min-width:591px) and (max-width:600px)) {
     .product-image-grid-2 {
         grid-template-columns: repeat(2, minmax(11rem, 1fr));
     }
-
 }
-
-
 
 @media(max-width:830px) {
     .product-details-img {

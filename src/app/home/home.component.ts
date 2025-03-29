@@ -5,6 +5,7 @@ import { EcommerceServicesService } from '../services/ecommerce-services.service
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ImagesliderComponent } from '../imageslider/imageslider/imageslider.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,7 @@ export class HomeComponent {
   wishlistSelected: boolean = false
   router: Router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
+  toastr: ToastrService = inject(ToastrService)
   ngOnInit() {
     this.usersService.updateCartCount();
     let wishList = JSON.parse(localStorage.getItem("wishListExplore") || "[]");
@@ -259,6 +261,7 @@ export class HomeComponent {
     cartProducts.push(product);
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
+    this.toastr.success("your cart has been added successfully");
     return cartProducts
   }
   addProduct(sellProduct: any) {
@@ -269,7 +272,7 @@ export class HomeComponent {
     sellcartProducts.push(sellProduct);
     localStorage.setItem("cartProducts", JSON.stringify(sellcartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
-    alert("Your Cart has been been  added Successfully")
+    this.toastr.success("your cart has been added successfully");
     return sellcartProducts
   }
   addProductExplore(ExploreProduct: any) {
@@ -280,7 +283,7 @@ export class HomeComponent {
     cartProductsExplore.push(ExploreProduct);
     localStorage.setItem("cartProducts", JSON.stringify(cartProductsExplore));
     this.usersService.cartItemsCount.update(old => old + 1);
-    alert("Your Cart has been been  added Successfully")
+    this.toastr.success("your cart has been added successfully");
     return cartProductsExplore
   }
   addWish(product: any) {

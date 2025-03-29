@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { EcommerceServicesService } from '../services/ecommerce-services.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-
+import { NavigationStart, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-details',
-  imports: [CommonModule],
+  imports: [CommonModule,],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
@@ -15,12 +16,14 @@ export class ProductDetailsComponent {
   isCartAdded: boolean = false
   showColour: boolean = false
   isValid: boolean = false
-  usersService: EcommerceServicesService = inject(EcommerceServicesService)
   productDetail: any;
   quantity: number = 1;
   productList: any;
   productLists: any[] = [];
+  subscription!: Subscription
+  usersService: EcommerceServicesService = inject(EcommerceServicesService)
   router: Router = inject(Router)
+  constructor(private toastr: ToastrService) { }
   ngOnInit() {
     const productData = localStorage.getItem("cartProducts");
     if (productData) {
@@ -36,6 +39,25 @@ export class ProductDetailsComponent {
       product.wishlistSelected = wishList.some((wishItem: any) => wishItem.id === product.id);
     });
     this.usersService.updateCartCount();
+    this.subscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        if (event.navigationTrigger === 'popstate') {
+          console.log('Browser back button clicked');
+          localStorage.removeItem('cartProducts');
+          this.router.navigate(['/home']);
+        }
+      }
+    });
+  }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
+  returnHome() {
+    localStorage.removeItem("cartProducts")
+    this.router.navigate(['/home'])
   }
 
   decreaseNumber() {
@@ -109,7 +131,7 @@ export class ProductDetailsComponent {
     cartProducts.push(productDetail);
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
-    alert("your cart has been added successfully")
+    this.toastr.success("your cart has been added successfully");
     return cartProducts
   }
   addWishDetail(productDetail: any) {

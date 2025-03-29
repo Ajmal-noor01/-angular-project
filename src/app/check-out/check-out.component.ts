@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-check-out',
@@ -10,6 +11,7 @@ import { Component } from '@angular/core';
 export class CheckOutComponent {
   checkouts: any[] = []
   totalPrice: number = 0
+  toastr: ToastrService = inject(ToastrService)
   ngOnInit() {
     this.checkouts = JSON.parse(localStorage.getItem("cartProducts") || '[]').map((product: any) => ({
       ...product,
@@ -23,6 +25,6 @@ export class CheckOutComponent {
     return this.totalPrice
   }
   placeOrder() {
-    alert("Your Order has been placed Successfully")
+    this.toastr.success("Your Order has been placed Successfully")
   }
 }

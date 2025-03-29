@@ -333,6 +333,7 @@ section {
     // width: 7.5rem;
     align-self: center;
     // margin-block: auto;
+    // margin-bottom: 1rem;
 }
 
 .product-image-grid-2 {
@@ -408,6 +409,10 @@ section {
     left: 0px;
     display: none;
     transition: all 1s linear;
+    padding-block: 0.4rem;
+    border-bottom-left-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    font-size: .9rem;
 }
 
 .product-details {
@@ -470,9 +475,12 @@ section {
 }
 
 .book-shelf {
-    width: 8rem;
-    margin-top: -2.5rem;
+    // width: 8rem;
+    // margin-top: -2.5rem;
     margin-right: 1rem;
+    width: 7.5rem;
+    margin-top: -3rem;
+    margin-bottom: 0.5rem;
 }
 
 .small-img {
@@ -989,7 +997,8 @@ section {
 
 .Explore-curology {
     margin-top: -1rem;
-    width: 11rem;
+    // width: 11rem;
+    width: 10rem;
 }
 
 .Explore-car {
@@ -1009,7 +1018,9 @@ section {
 
 .Explore-quilted {
     width: 10rem;
-    margin-top: -1rem;
+    // margin-top: -1rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
 }
 
 @media(max-width:978px) {
@@ -1279,6 +1290,10 @@ section {
 
     .money-back-service {
         width: 4rem;
+    }
+
+    .product-image>img {
+        margin-bottom: 1rem;
     }
 }
 

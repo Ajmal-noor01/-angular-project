@@ -30,8 +30,6 @@ export class CartComponent {
   calculateTotalPrice() {
     this.totalPrice = this.productCarts.reduce((sum, item) => sum + item.subtotal, 0); //item.price
   }
-
-
   getTotalPrice(): number {
     return this.productCarts.reduce((total, product) => total + (product.subtotal || 0), 0);
   }
@@ -47,7 +45,6 @@ export class CartComponent {
   }
   decreaseCartNumber(productId: number) {
     this.productCarts = this.productCarts.map(product =>
-
       product.id === productId && product.quantity > 1
         ? { ...product, quantity: product.quantity - 1, subtotal: Number(product.price) * (product.quantity - 1) }
         : product

@@ -25,7 +25,7 @@ export class SignupComponent {
   submit() {
     this.isSubmitted = true
     if (this.userForm.valid) {
-      this.router.navigate(['/log-in']); // Navigate programmatically
+      this.router.navigate(['/log-in']);
     }
     return this.userForm
   }

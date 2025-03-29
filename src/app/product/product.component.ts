@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { EcommerceServicesService } from '../services/ecommerce-services.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -14,30 +15,23 @@ export class ProductComponent {
   isCartAdded: boolean = false
   showColour: boolean = false
   isValid: boolean = false
-  usersService: EcommerceServicesService = inject(EcommerceServicesService)
   product: any;
-  // router: any;
+  usersService: EcommerceServicesService = inject(EcommerceServicesService)
   router: Router = inject(Router)
-  // specialIndex = 4;
+  toastr: ToastrService = inject(ToastrService)
   ngOnInit() {
-    //previous code
     let wishList = JSON.parse(localStorage.getItem("wishListProducts") || "[]");
-
     if (!Array.isArray(wishList)) {
       wishList = [];
     }
-
     this.products.forEach(product => {
       product.wishlistSelected = wishList.some((wishItem: any) => wishItem.id === product.id);
     });
     this.usersService.updateCartCount();
-
     let wishListProducts = JSON.parse(localStorage.getItem("wishListProducts") || "[]");
-
     if (!Array.isArray(wishListProducts)) {
       wishListProducts = [];
     }
-
     this.products.forEach(product => {
       product.wishlistSelected = wishListProducts.some((wishItem: any) => wishItem.id === product.id);
     });
@@ -120,7 +114,7 @@ export class ProductComponent {
     cartProducts.push(product);
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     this.usersService.cartItemsCount.update(old => old + 1);
-    alert("your Cart has  been added succesfully")
+    this.toastr.success("your cart has been added successfully");
   }
   addWish(product: any) {
     this.isWishList = true

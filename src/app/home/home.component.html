@@ -117,7 +117,7 @@
             <div class="product-image">
                 <div class="flex justify-between">
                     <p class="discount-tag-2"><span>{{sellProduct?.discount}}</span></p>
-                    <div class="flex flex-col cursor-pointer items-center gap-[.2rem]">
+                    <div class="flex flex-col cursor-pointer items-center gap-[.5rem]">
                         <div class="wishlist-div">
                             <svg (click)="toggleSellWishlist(sellProduct)"
                                 [ngClass]="sellProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22" height="20"
@@ -222,7 +222,7 @@
                             [ngClass]="{'new-tag':$index===5 ,'new-tag-index':$index===7,'index1':$index===0,'index2':$index===1,'index3':$index===2,'index4':$index===3}">
                             <span>{{ExploreProduct.new}}</span>
                         </p>
-                        <div class="flex flex-col cursor-pointer items-center gap-[.2rem]">
+                        <div class="flex flex-col cursor-pointer items-center gap-[.5rem]">
                             <div class="wishlist-div">
                                 <svg (click)="toggleExploreWishlist(ExploreProduct)"
                                     [ngClass]="ExploreProduct.wishlistSelected ? 'bgred' : 'bgwhite'" width="22"
