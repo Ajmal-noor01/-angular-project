@@ -114,12 +114,14 @@ ul li:nth-child(7) {
 .cart-count {
     position: absolute;
     top: -31%;
-    right: -20%;
+    // right: -20%;
     background: red;
     color: white;
     border-radius: 100%;
-    padding: 0.1rem 0.3rem;
+    // padding: 0.1rem 0.3rem;
     font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    right: -35%;
 }
 
 @media(max-width:978px) {

@@ -7,6 +7,8 @@ section {
     flex-direction: column;
     padding-block: 4rem;
     padding-top: 3rem;
+    max-width: 1300px;
+    margin-inline: auto;
 }
 
 .product-table {
@@ -29,6 +31,8 @@ section {
 .breadcrums {
     font-size: .9rem;
     color: rgba(0, 0, 0, 0.354);
+    // padding-inline: 1rem;
+
 }
 
 .breadcrums p:nth-last-child(1) {
@@ -46,6 +50,8 @@ section {
     border: none;
     overflow: auto;
     padding-block: 0;
+    padding-inline: 1rem;
+
 }
 
 .cart-table {
@@ -61,7 +67,6 @@ table {
     border-collapse: separate;
     border-spacing: 0 15px;
     border: none;
-    padding-inline: 1rem;
 }
 
 tr {
@@ -205,6 +210,8 @@ td div {
     justify-content: space-between;
     padding-block: 2rem;
     gap: 1rem;
+    // padding-inline: 1rem;
+
 }
 
 .cart-total {
@@ -306,13 +313,23 @@ td div {
 
     .breadcrums {
         display: none;
+        // padding-inline: 0
     }
 
     .cart-section {
         padding-block: 1rem;
     }
 
-    .table-section-parent {
-        padding-top: 1rem;
-    }
+    // .cart-total-section {
+    //     padding-inline: 0
+    // }
+
+    // .table-section {
+    //     padding-top: 1rem;
+    // }
+
+    // .cart-button {
+    //     padding-inline: 0;
+    // }
+
 }

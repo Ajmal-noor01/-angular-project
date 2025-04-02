@@ -12,6 +12,7 @@
 .breadcrums {
     font-size: .9rem;
     color: rgba(0, 0, 0, 0.354);
+
 }
 
 .breadcrums p:nth-last-child(1) {
@@ -47,6 +48,8 @@
     display: flex;
     flex-direction: column;
     padding-block: 4rem;
+    max-width: 1300px;
+    margin-inline: auto;
 }
 
 .check-out-section {
