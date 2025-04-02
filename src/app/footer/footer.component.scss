@@ -32,6 +32,11 @@ button {
     gap: 1rem;
 }
 
+section {
+    background-color: black;
+
+}
+
 .footer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -42,6 +47,8 @@ button {
     padding-block: 3rem;
     padding-inline: 4rem;
     gap: 1rem;
+    max-width: 1300px;
+    margin-inline: auto;
 }
 
 .footer li {
